@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work — Case Studies in Branding, Apps & Print | Avora Brands</title>
+<meta name="description" content="12 case studies: Tiara Clinic, Sri Veluguvani, CashAlert, Bhakti TV, Picxel AI, Local Service Finder, Swagat Stay and more.">
+<meta property="og:image" content="https://www.avorabrands.in/images/img-bhaktitv.jpg">
+<meta name="theme-color" content="#060A18">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪔</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body data-page="work" class="dark-top">
+<div data-header></div>
+<main>
+  <section class="page-hero">
+    <div class="stars"></div><div class="rangoli-bg"></div>
+    <div class="container on-dark page-hero-split">
+      <div>
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><span>Work</span></nav>
+        <span class="eyebrow reveal">Case studies</span>
+        <h1 class="h-display mt-24" data-split>Work that<br><span class="serif gold-text">speaks</span> for us.</h1>
+      </div>
+      <div>
+        <p class="lead reveal" style="--d:.3s">FinTech, healthcare, devotional media, publishing and hyperlocal services. Each project starts with the business problem — here's what we did and what changed.</p>
+        <div class="stats mt-32 reveal" style="--d:.4s;grid-template-columns:repeat(3,1fr);border-color:rgba(255,255,255,.1)">
+          <div class="stat" style="padding:20px 0"><b data-count="12">12</b><span>Case studies</span></div>
+          <div class="stat" style="padding:20px 18px;border-color:rgba(255,255,255,.1)"><b data-count="9">9</b><span>Clients</span></div>
+          <div class="stat" style="padding:20px 18px;border-color:rgba(255,255,255,.1)"><b data-count="5">5</b><span>Disciplines</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:72px">
+    <div class="container">
+      <div class="filters" role="tablist" aria-label="Filter projects" id="filters"></div>
+      <div class="work-grid" id="grid"></div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container"><div class="cta-band on-dark" style="grid-template-columns:1fr auto">
+      <div><span class="eyebrow">Your project next?</span><h2 class="h2 mt-16">Let's make something <span class="serif gold-text">worth a case study.</span></h2></div>
+      <div class="btn-row"><a class="btn btn--gold" href="contact.html" data-magnetic>Start a project <i data-i="arrow"></i></a></div>
+    </div></div>
+  </section>
+</main>
+<div data-footer></div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/site.js"></script>
+<script>
+  const grid = document.getElementById('grid'), fl = document.getElementById('filters');
+  const start = new URLSearchParams(location.search).get('filter') || 'all';
+  fl.innerHTML = [['all', 'All work'], ...Object.entries(CATS)].map(([k, v]) => `<button role="tab" data-f="${k}" class="${k === start ? 'active' : ''}">${v} <span class="muted" style="font-weight:600">${k === 'all' ? PROJECTS.length : PROJECTS.filter(p => p.cat === k).length}</span></button>`).join('');
+  grid.innerHTML = PROJECTS.map(workCard).join('');
+  const apply = f => {
+    fl.querySelectorAll('button').forEach(b => { b.classList.toggle('active', b.dataset.f === f); b.setAttribute('aria-selected', b.dataset.f === f); });
+    grid.querySelectorAll('.work-card').forEach(c => { const show = f === 'all' || c.dataset.cat === f; c.classList.toggle('hide', !show); if (show) c.classList.add('in'); });
+  };
+  fl.addEventListener('click', e => { const b = e.target.closest('button'); if (b) { apply(b.dataset.f); history.replaceState(null, '', b.dataset.f === 'all' ? 'work.html' : `?filter=${b.dataset.f}`); } });
+  apply(start); watchReveals(grid);
+</script>
+</body>
+</html>

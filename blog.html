@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Journal — Branding, Design & Print Guides | Avora Brands</title>
+<meta name="description" content="Practical guides on branding, UI/UX, social media sizes, print (CMYK vs RGB) and colour psychology from the Avora Brands studio.">
+<meta name="theme-color" content="#060A18">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪔</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body data-page="blog" class="dark-top">
+<div data-header></div>
+<main>
+  <section class="page-hero" style="padding-bottom:80px">
+    <div class="stars"></div><div class="rangoli-bg"></div>
+    <div class="container on-dark page-hero-split">
+      <div>
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><span>Journal</span></nav>
+        <span class="eyebrow reveal">The Avora Journal</span>
+        <h1 class="h-display mt-24" data-split>Notes from<br>the <span class="serif gold-text">studio.</span></h1>
+      </div>
+      <div>
+        <p class="lead reveal" style="--d:.3s">Practical, no-fluff guides on branding, design and print — written by the people who do the work every day.</p>
+        <form class="news mt-24 reveal" data-news style="max-width:460px;--d:.4s"><input type="email" required placeholder="Get one guide a month" aria-label="Email"><button class="btn btn--gold btn--sm" type="submit">Subscribe</button></form>
+      </div>
+    </div>
+  </section>
+  <section class="section" style="padding-top:64px">
+    <div class="container">
+      <div class="filters" id="bf"></div>
+      <div id="feature"></div>
+      <div class="grid g-3" id="posts"></div>
+    </div>
+  </section>
+</main>
+<div data-footer></div>
+<script src="assets/js/data.js"></script>
+<script>
+  const fmt = d => new Date(d).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+  const card = (p, i) => `<a class="post-card reveal" style="--d:${(i % 3) * .06}s" href="post.html?p=${p.id}" data-cat="${p.cat}">
+    <div class="cover" style="background:${p.bg}"><span class="big">${p.mark}</span></div>
+    <div class="body"><span class="chip" style="align-self:flex-start">${p.cat}</span><h3 class="h4">${p.title}</h3><p>${p.excerpt}</p>
+    <div class="meta"><span>${p.author}</span>·<span>${fmt(p.date)}</span></div></div></a>`;
+  const [first, ...rest] = POSTS;
+  document.getElementById('feature').innerHTML = `<a class="post-card post-feature reveal" href="post.html?p=${first.id}" data-cat="${first.cat}">
+    <div class="cover" style="background:${first.bg}"><span class="big" style="font-size:72px">${first.mark}</span></div>
+    <div class="body"><span class="chip chip--gold" style="align-self:flex-start">Latest · ${first.cat}</span><h2 class="h3">${first.title}</h2><p style="font-size:17px">${first.excerpt}</p>
+    <div class="meta"><span>${first.author}</span>·<span>${fmt(first.date)}</span></div><span class="link-arrow mt-16">Read the guide <i data-i="arrow"></i></span></div></a>`;
+  document.getElementById('posts').innerHTML = rest.map(card).join('');
+  const cats = ['All', ...new Set(POSTS.map(p => p.cat))];
+  const bf = document.getElementById('bf');
+  bf.innerHTML = cats.map((c, i) => `<button class="${i ? '' : 'active'}" data-c="${c}">${c}</button>`).join('');
+  bf.addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    bf.querySelectorAll('button').forEach(x => x.classList.toggle('active', x === b));
+    document.querySelectorAll('.post-card').forEach(c => { c.style.display = b.dataset.c === 'All' || c.dataset.cat === b.dataset.c ? '' : 'none'; c.classList.add('in'); });
+  });
+</script>
+<script src="assets/js/site.js"></script>
+</body>
+</html>

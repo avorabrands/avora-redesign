@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Journal — Avora Brands</title>
+<meta name="description" content="A guide from the Avora Brands studio.">
+<meta name="theme-color" content="#060A18">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪔</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<style>
+  .progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--gold),var(--marigold));z-index:70}
+  .post-banner{border-radius:var(--radius-lg);overflow:hidden;margin:-70px auto 0;max-width:960px;position:relative;z-index:3;box-shadow:var(--shadow-lg);aspect-ratio:16/8;background:var(--bg-2)}
+  .post-banner img{width:100%;height:100%;object-fit:cover}
+  .prose blockquote.tip{font-family:var(--font);font-style:normal;font-size:17px;background:#fff;border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:14px;padding:16px 20px}
+  .prose blockquote.tip p{margin:0}
+  .share{max-width:720px;margin:40px auto 0;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+</style>
+</head>
+<body data-page="blog" class="dark-top">
+<div class="progress" aria-hidden="true"></div>
+<div data-header></div>
+<main id="post"></main>
+<div data-footer></div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/posts-content.js"></script>
+<script>
+  (() => {
+    const id = new URLSearchParams(location.search).get('p');
+    const i = Math.max(0, POSTS.findIndex(p => p.id === id)), p = POSTS[i], body = POST_BODIES[p.id];
+    const more = POSTS.filter(x => x.id !== p.id).slice(0, 3);
+    const fmt = d => new Date(d).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
+    document.title = `${p.title} — Avora Brands Journal`;
+    document.querySelector('meta[name=description]').content = p.excerpt;
+    const url = location.href;
+    document.getElementById('post').innerHTML = `
+    <section class="page-hero" style="padding-bottom:130px">
+      <div class="stars"></div><div class="rangoli-bg"></div>
+      <div class="container on-dark" style="max-width:900px">
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><a href="blog.html">Journal</a><span>/</span><span>${p.cat}</span></nav>
+        <span class="chip chip--gold reveal">${p.cat}</span>
+        <h1 class="h1 mt-24" data-split>${p.title}</h1>
+        <p class="mt-24 reveal" style="color:#A9B1C7;font-weight:600">${p.author} · ${fmt(p.date)} · ${body.read}</p>
+      </div>
+    </section>
+    <div class="container"><div class="post-banner reveal-scale">${body.banner ? `<img src="${body.banner}" alt="">` : ''}</div></div>
+    <article class="section" style="padding-top:72px"><div class="container">
+      <div class="prose">${body.html}</div>
+      <div class="share"><span class="muted" style="font-weight:700">Share:</span>
+        <a class="btn btn--sm btn--ghost" target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent(p.title + ' ' + url)}">WhatsApp</a>
+        <a class="btn btn--sm btn--ghost" target="_blank" rel="noopener" href="https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}">LinkedIn</a>
+        <button class="btn btn--sm btn--ghost" type="button" id="copy">Copy link</button></div>
+      <div class="post-cta"><div><b style="font-size:20px">Need this done for your business?</b><p>Our studio handles it end-to-end — free 15-minute call.</p></div><a class="btn btn--gold" href="contact.html">Get a quote <i data-i="arrow"></i></a></div>
+    </div></article>
+    <section class="section section--white"><div class="container">
+      <div class="sec-head"><div><span class="eyebrow">Keep reading</span><h2 class="h2 mt-8">More from the journal</h2></div><a class="btn btn--ghost" href="blog.html">All articles</a></div>
+      <div class="grid g-3">${more.map(m => `<a class="post-card reveal" href="post.html?p=${m.id}"><div class="cover" style="background:${m.bg}"><span class="big">${m.mark}</span></div><div class="body"><span class="chip" style="align-self:flex-start">${m.cat}</span><h3 class="h4">${m.title}</h3><div class="meta"><span>${m.author}</span></div></div></a>`).join('')}</div>
+    </div></section>`;
+  })();
+</script>
+<script src="assets/js/site.js"></script>
+<script>
+  const bar = document.querySelector('.progress');
+  addEventListener('scroll', () => { const h = document.documentElement; bar.style.width = (h.scrollTop / (h.scrollHeight - innerHeight) * 100) + '%'; }, { passive: true });
+  document.getElementById('copy')?.addEventListener('click', e => { navigator.clipboard?.writeText(location.href); e.target.textContent = 'Copied ✓'; });
+</script>
+</body>
+</html>

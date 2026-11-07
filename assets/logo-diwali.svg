@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 120" role="img" aria-label="Avora Brands — Diwali edition">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFE7A3"/>
+      <stop offset=".45" stop-color="#F5B942"/>
+      <stop offset="1" stop-color="#C97A12"/>
+    </linearGradient>
+    <linearGradient id="trail" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#2F6FD6"/>
+      <stop offset=".6" stop-color="#4C8DF0"/>
+      <stop offset="1" stop-color="#F5B942"/>
+    </linearGradient>
+    <radialGradient id="flame" cx=".5" cy=".7" r=".6">
+      <stop offset="0" stop-color="#FFF6D6"/>
+      <stop offset=".45" stop-color="#FFC24A"/>
+      <stop offset="1" stop-color="#FF7A1A"/>
+    </radialGradient>
+    <radialGradient id="glow" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#FFC24A" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#FFC24A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Mark: the A, with the growth arrow turned into a Diwali rocket -->
+  <g transform="translate(4 6)">
+    <path d="M2 104 L48 10 L66 46 L44 92 C38 76 26 72 14 86 Z" fill="currentColor"/>
+    <path d="M50 58 L68 102 L106 30" fill="none" stroke="url(#trail)" stroke-width="12" stroke-linejoin="miter" stroke-linecap="butt"/>
+    <!-- rocket head -->
+    <path d="M98 22 L122 8 L116 36 Z" fill="url(#gold)"/>
+    <!-- burst -->
+    <circle cx="124" cy="8" r="22" fill="url(#glow)"/>
+    <g stroke="url(#gold)" stroke-width="3" stroke-linecap="round">
+      <line x1="128" y1="2" x2="136" y2="-6"/>
+      <line x1="131" y1="10" x2="142" y2="10"/>
+      <line x1="126" y1="15" x2="133" y2="23"/>
+      <line x1="119" y1="0" x2="118" y2="-9"/>
+    </g>
+    <circle cx="144" cy="-1" r="2.4" fill="#FFE7A3"/>
+    <circle cx="139" cy="22" r="1.8" fill="#FFC24A"/>
+  </g>
+
+  <!-- Wordmark -->
+  <g font-family="'Manrope','Plus Jakarta Sans',Arial,sans-serif">
+    <text x="176" y="68" font-size="54" font-weight="500" letter-spacing="15" fill="currentColor">AVORA</text>
+    <line x1="178" y1="94" x2="226" y2="94" stroke="url(#gold)" stroke-width="2"/>
+    <text x="236" y="101" font-size="19" font-weight="600" letter-spacing="9" fill="url(#gold)">BRANDS</text>
+    <line x1="364" y1="94" x2="412" y2="94" stroke="url(#gold)" stroke-width="2"/>
+  </g>
+
+  <!-- Diya beside the wordmark -->
+  <g transform="translate(440 52)">
+    <ellipse cx="22" cy="-12" rx="22" ry="26" fill="url(#glow)"/>
+    <path d="M22 -30 C30 -18 30 -8 22 -2 C14 -8 14 -18 22 -30 Z" fill="url(#flame)"/>
+    <path d="M0 4 C6 30 38 30 44 4 Z" fill="url(#gold)"/>
+    <path d="M-4 4 H48" stroke="url(#gold)" stroke-width="3" stroke-linecap="round"/>
+  </g>
+</svg>
