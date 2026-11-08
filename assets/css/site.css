@@ -1690,3 +1690,25 @@ input:invalid,textarea:invalid,select:invalid{box-shadow:none}
   .sec-head .flex:has(.scroller-nav) .scroller-nav button{width:46px;height:46px}
   .sec-head .flex:has(.scroller-nav) .btn{flex:1;justify-content:center;padding:13px 14px;font-size:14.5px}
 }
+
+/* floating contact buttons (desktop + mobile) */
+.m-cta{display:none!important}
+.fabs{position:fixed;right:20px;bottom:20px;z-index:45;display:flex;flex-direction:column;gap:12px;align-items:flex-end}
+.fab{position:relative;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;color:#fff;box-shadow:0 14px 30px -8px rgba(6,10,24,.45);transition:transform .25s var(--ease)}
+.fab:hover{transform:scale(1.08)}
+.fab svg{width:26px;height:26px}
+.fab-wa{position:relative!important;right:auto!important;bottom:auto!important;display:grid!important;background:#1FAF54}
+.fab-call{background:linear-gradient(135deg,var(--gold-2),var(--gold) 55%,var(--marigold));color:var(--navy-950)}
+.fab-call svg{width:24px;height:24px}
+.fab-wa::after{content:"";position:absolute;inset:0;border-radius:50%;box-shadow:0 0 0 0 rgba(31,175,84,.5);animation:fabPulse 2.4s infinite}
+@keyframes fabPulse{70%{box-shadow:0 0 0 14px rgba(31,175,84,0)}100%{box-shadow:0 0 0 0 rgba(31,175,84,0)}}
+.fab-tip{position:absolute;right:calc(100% + 10px);top:50%;transform:translate(6px,-50%);white-space:nowrap;padding:7px 12px;border-radius:10px;background:var(--navy-950);color:#fff;font-size:13px;font-weight:700;opacity:0;pointer-events:none;transition:.2s}
+.fab:hover .fab-tip{opacity:1;transform:translate(0,-50%)}
+@media (max-width:760px){
+  .fabs{right:14px;bottom:16px;gap:10px}
+  .fab{width:50px;height:50px}
+  .fab svg{width:23px;height:23px}
+  .fab-tip{display:none}
+}
+@media (prefers-reduced-motion:reduce){.fab-wa::after{animation:none}}
+.fab-call svg{fill:currentColor;stroke:none}

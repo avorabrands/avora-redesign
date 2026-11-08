@@ -76,7 +76,6 @@ function header() {
       <a href="index.html" class="brand" aria-label="Avora Brands home">${logoSVG()}</a>
       <nav aria-label="Main"><ul class="nav-links">${links}</ul></nav>
       <div class="nav-cta">
-        <a class="btn btn--ghost btn--sm" href="${wa('Hi Avora Brands! I would like to know more.')}" target="_blank" rel="noopener">${I.wa} WhatsApp</a>
         <a class="btn btn--gold btn--sm" href="contact.html">Get a quote ${I.arrow}</a>
         <button class="menu-btn" aria-label="Open menu" aria-expanded="false"><span></span></button>
       </div>
@@ -133,8 +132,10 @@ function footer() {
       <div class="foot-bottom"><span>© 2026 Avora Brands. All rights reserved.</span><span>Made with 🪔 in Bengaluru & Madanapalle</span></div>
     </div>
   </footer>
-  <a class="fab-wa" href="${wa('Hi Avora Brands! I have a question.')}" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">${I.wa}</a>
-  <div class="m-cta"><a class="btn btn--wa" href="${wa('Hi Avora Brands!')}" target="_blank" rel="noopener">${I.wa} WhatsApp</a><a class="btn btn--gold" href="tel:+${SITE.phoneRaw}">Call now</a></div>`;
+  <div class="fabs" aria-label="Contact us">
+    <a class="fab fab-call" href="tel:+${SITE.phoneRaw}" aria-label="Call us"><span class="fab-tip">Call us</span>${I.phone}</a>
+    <a class="fab fab-wa" href="${wa('Hi Avora Brands! I have a question.')}" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><span class="fab-tip">WhatsApp</span>${I.wa}</a>
+  </div>`;
 }
 
 $('[data-header]')?.insertAdjacentHTML('afterbegin', header());
