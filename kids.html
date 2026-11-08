@@ -364,6 +364,110 @@
     .hills .flower{width:24px;height:42px;bottom:22px}
     .cloud.c1{top:120px;--w:120px}.cloud.c2{top:420px;--w:90px}.cloud.c3{top:250px;--w:80px}
   }
+
+  /* storybook controls */
+  .bk-row{display:grid;grid-template-columns:1fr auto;gap:12px;margin-top:20px;align-items:end}
+  .bk-field{display:flex;flex-direction:column;gap:6px;min-width:0}
+  .bk-field>span,.bk-lbl{font-family:'Fredoka';font-weight:600;font-size:14px;color:var(--soft)}
+  .bk-field input{height:54px;border-radius:16px;border:3px solid var(--ink);padding:0 16px;font-family:'Fredoka';font-size:20px;font-weight:600;color:var(--ink);background:#fff;min-width:0;width:100%}
+  .bk-field input:focus{outline:0;box-shadow:0 0 0 5px rgba(139,108,239,.25)}
+  .bk-row .gen{margin-top:0;height:54px;align-items:center}
+  .bk-row .gen button{height:100%;padding:0 18px}
+  .bk-lbl{display:block;margin-top:18px}
+  .adv{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:8px}
+  .adv button{display:block;padding:0;border:3px solid var(--ink);border-radius:16px;overflow:hidden;background:#fff;cursor:pointer;position:relative;transition:transform .2s,box-shadow .2s}
+  .adv button img{display:block;width:100%;aspect-ratio:3/3.4;object-fit:cover;object-position:center 70%}
+  .adv button span{display:block;padding:6px 4px;font-family:'Fredoka';font-weight:600;font-size:14px;text-align:center;color:var(--ink);background:#fff}
+  .adv button.on{transform:translateY(-4px);box-shadow:0 6px 0 var(--grape);border-color:var(--grape)}
+  .adv button.on span{background:var(--grape);color:#fff}
+  .bk-order{margin-top:22px;width:100%;justify-content:center}
+  @media (max-width:900px){
+    #p-book .book-wrap{order:-1;min-height:330px}
+    #p-book .book{width:min(220px,62%)}
+  }
+  @media (max-width:420px){
+    .bk-row{grid-template-columns:1fr}
+    .bk-row .gen{width:100%}.bk-row .gen button{flex:1}
+    .adv{gap:8px}.adv button span{font-size:12.5px;padding:5px 2px}
+  }
+  /* filter pills */
+  .crayons{gap:10px!important;align-items:center!important}
+  .crayon{height:auto!important;clip-path:none!important;transform:none!important;display:inline-flex;align-items:center;gap:8px;padding:10px 12px 10px 14px!important;border-radius:999px;border:2.5px solid var(--ink)!important;background:#fff!important;color:var(--ink)!important;box-shadow:0 4px 0 var(--ink);font-size:15px;transition:background .2s,color .2s,transform .2s!important}
+  .crayon::before{display:none}
+  .crayon i{width:12px;height:12px;border-radius:50%;background:var(--c);border:2px solid var(--ink)}
+  .crayon b{min-width:24px;height:24px;padding:0 6px;border-radius:999px;display:inline-grid;place-items:center;font-size:12.5px;background:var(--paper);color:var(--ink)}
+  .crayon:hover{transform:translateY(-2px)!important}
+  .crayon.on{background:var(--c)!important;color:#fff!important;transform:translateY(-3px)!important}
+  .crayon.on i{background:#fff}
+  .crayon.on b{background:rgba(255,255,255,.25);color:#fff}
+  @media (max-width:600px){.crayons{padding:6px 16px 10px!important;gap:8px!important}.crayon{font-size:14px;padding:8px 10px 8px 12px!important}}
+  /* folk chooser */
+  .stops{grid-template-columns:repeat(5,1fr)!important;gap:16px;margin-top:10px}
+  .stop{margin-top:0!important;display:flex;flex-direction:column;align-items:flex-start;text-align:left;font:inherit;cursor:pointer;padding:26px 18px 18px}
+  .stop:hover{transform:translateY(-6px)}
+  .stop p{flex:1}
+  .stop .pick{margin-top:14px;display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.7);border:2px solid var(--ink);font-family:'Fredoka';font-weight:600;font-size:13.5px}
+  .stop .pick em{font-style:normal}
+  .stop .pick i{width:16px;height:16px;border-radius:50%;border:2px solid var(--ink);background:#fff;position:relative}
+  .stop.on{box-shadow:0 0 0 4px var(--sun),0 8px 0 rgba(0,0,0,.35);transform:translateY(-6px)}
+  .stop.on .pick{background:var(--ink);color:#fff}
+  .stop.on .pick i{background:var(--sun);border-color:var(--sun)}
+  .folk-bar{margin-top:30px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:16px 16px 16px 24px;border-radius:24px;background:rgba(255,255,255,.08);border:2px dashed rgba(255,255,255,.3)}
+  .folk-bar span{color:#E5E2FA;font-size:16px}
+  .folk-bar b{color:var(--sun)}
+  .folk-bar .kbtn[disabled]{opacity:.5;cursor:not-allowed;transform:none}
+  @media (max-width:1000px){.stops{grid-template-columns:repeat(3,1fr)!important}}
+  @media (max-width:600px){
+    .stops{display:grid!important;grid-template-columns:1fr 1fr!important;overflow:visible!important;margin:0!important;padding:0!important;gap:12px}
+    .stop{flex:auto!important;padding:20px 14px 14px}
+    .stop svg.art{height:70px}
+    .stop h3{font-size:19px}.stop p{font-size:13px}
+    .stop .pin{font-size:11px;left:14px}
+    .stop .pick{font-size:12px;padding:6px 10px}
+    .folk-bar{padding:14px;flex-direction:column;align-items:stretch;text-align:center}
+    .folk-bar .kbtn{justify-content:center}
+  }
+  /* folk: swipeable art cards + kit box */
+  .stop .pick{background:var(--ink)!important;color:#fff;border-color:var(--ink)!important}
+  .stop .pick i{display:none}
+  .stop.on .pick{background:#fff!important;color:var(--ink)}
+  .stop.on .pick em::before{content:"✓ "}
+  .stop.on{box-shadow:0 0 0 4px var(--sun),0 8px 0 rgba(0,0,0,.35)}
+  .kb-fly{position:fixed;z-index:300;border-radius:16px;padding:8px;pointer-events:none;box-sizing:border-box}
+  .kitbox{position:relative;max-width:760px;margin:56px auto 0}
+  .kb-lid{height:34px;margin:0 18px;background:#B98552;border:3px solid var(--ink);border-bottom:0;border-radius:14px 14px 0 0;transform-origin:bottom center;transform:perspective(400px) rotateX(-28deg);transition:transform .5s cubic-bezier(.34,1.6,.5,1)}
+  .kitbox.has .kb-lid{transform:perspective(400px) rotateX(-60deg)}
+  .kb-body{position:relative;background:linear-gradient(180deg,#D7A66E,#C8955D);border:3px solid var(--ink);border-radius:18px;padding:22px 20px 18px;box-shadow:0 10px 0 rgba(0,0,0,.35);color:var(--ink)}
+  .kb-body::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:46px;margin-left:-23px;background:rgba(255,255,255,.22);pointer-events:none}
+  .kb-stamp{position:absolute;right:16px;top:-16px;transform:rotate(4deg);padding:6px 12px;border-radius:10px;background:var(--paper);border:2.5px solid var(--ink);font-family:'Fredoka';line-height:1.05;text-align:center;box-shadow:0 3px 0 var(--ink);z-index:2}
+  .kb-stamp b{display:block;font-size:13px;color:var(--grape)}.kb-stamp span{font-size:12px;font-weight:600}
+  .kb-slots{position:relative;display:flex;flex-wrap:wrap;gap:10px;min-height:96px;align-items:flex-end;justify-content:center;padding:6px 4px 14px}
+  .kb-slots:empty::after{content:"";width:70%;height:70px;border:2.5px dashed rgba(30,27,58,.35);border-radius:14px}
+  .kb-sheet{display:flex;flex-direction:column;align-items:center;gap:2px;width:96px;padding:8px 6px;border-radius:12px;background:var(--c);border:2.5px solid var(--ink);box-shadow:0 4px 0 var(--ink);transform:rotate(var(--r));animation:sheetIn .5s cubic-bezier(.34,1.7,.5,1)}
+  .kb-sheet svg{width:56px;height:40px;stroke-dasharray:none!important;stroke-dashoffset:0!important}
+  .kb-sheet svg *{stroke-dasharray:none!important;stroke-dashoffset:0!important}
+  .kb-sheet b{font-family:'Fredoka';font-size:12.5px}
+  @keyframes sheetIn{from{opacity:0;transform:translateY(-40px) rotate(20deg) scale(.6)}}
+  .kb-foot{position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:14px;border-top:2.5px dashed rgba(30,27,58,.35)}
+  .kb-foot span{font-family:'Fredoka';font-size:16px}
+  .kb-foot .kbtn[disabled]{opacity:.5;cursor:not-allowed;transform:none}
+  @media (max-width:900px){
+    .stops{display:flex!important;overflow-x:auto!important;scroll-snap-type:x mandatory;gap:14px!important;margin:0 -16px!important;padding:26px 16px 18px!important;scrollbar-width:none}
+    .stops::-webkit-scrollbar{display:none}
+    .stop{flex:0 0 68%!important;scroll-snap-align:center;min-height:300px;padding:26px 18px 18px!important}
+    .stop:nth-child(even){transform:rotate(1.5deg)}.stop:nth-child(odd){transform:rotate(-1.5deg)}
+    .stop.on{transform:translateY(-6px)!important}
+    .stop svg.art{height:96px!important}
+    .stop h3{font-size:24px!important}
+    .stop .pick{font-size:14px!important;padding:9px 14px!important}
+    .kitbox{margin-top:34px}
+  }
+  @media (max-width:600px){
+    .kb-body{padding:20px 12px 14px}
+    .kb-sheet{width:84px}.kb-sheet svg{width:48px;height:34px}
+    .kb-foot{flex-direction:column;align-items:stretch;text-align:center}
+    .kb-foot .kbtn{justify-content:center}
+  }
   @media (prefers-reduced-motion:reduce){
     .cloud,.plane,.sun .rays,.bal,.crayon-band .tr,.trail>svg.path path,.party .cf,.hills .flower,.scroll-cue{animation:none}
     .h-world .ch{animation:none;opacity:1;transform:none}
@@ -467,16 +571,19 @@
         </div>
         <div class="pane" id="p-book">
           <div>
-            <h3>Make them the hero.</h3><p class="sub">Type a name, choose boy or girl, pick an adventure and see their book cover.</p>
-            <div class="name-in"><input id="bk" maxlength="12" placeholder="Arjun" aria-label="Hero's name" autocomplete="off"></div>
-            <div class="gen" id="gen" aria-label="Hero is a"><button class="on" data-g="boy" type="button" aria-pressed="true">Boy</button><button data-g="girl" type="button" aria-pressed="false">Girl</button></div>
-            <div class="adv" id="adv">
-              <button class="on" data-a="space" style="--c:#3FB8F0" type="button"><i></i>Space</button>
-              <button data-a="jungle" style="--c:#3DBE7A" type="button"><i></i>Jungle</button>
-              <button data-a="ocean" style="--c:#2BA3C9" type="button"><i></i>Ocean</button>
-              <button data-a="festival" style="--c:#FF8A3D" type="button"><i></i>Festival</button>
+            <h3>Make them the hero.</h3><p class="sub">Their name, their adventure. Watch the cover change as you choose.</p>
+            <div class="bk-row">
+              <label class="bk-field"><span>Hero's name</span><input id="bk" maxlength="12" placeholder="Arjun" autocomplete="off"></label>
+              <div class="bk-field"><span>Hero is a</span><div class="gen" id="gen"><button class="on" data-g="boy" type="button" aria-pressed="true">Boy</button><button data-g="girl" type="button" aria-pressed="false">Girl</button></div></div>
             </div>
-            <div class="w-cta"><a class="kbtn grape" id="bkOrder" href="#" target="_blank" rel="noopener">Order this book</a></div>
+            <span class="bk-lbl">Pick an adventure</span>
+            <div class="adv" id="adv">
+              <button class="on" data-a="space" type="button"><img src="images/book-space-boy.jpg" alt=""><span>Space</span></button>
+              <button data-a="jungle" type="button"><img src="images/book-jungle-boy.jpg" alt=""><span>Jungle</span></button>
+              <button data-a="ocean" type="button"><img src="images/book-ocean-boy.jpg" alt=""><span>Ocean</span></button>
+              <button data-a="festival" type="button"><img src="images/book-festival-boy.jpg" alt=""><span>Festival</span></button>
+            </div>
+            <a class="kbtn grape bk-order" id="bkOrder" href="#" target="_blank" rel="noopener">Order this book <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
           <div class="book-wrap"><div class="book" id="book"><div class="face3 back3"></div><div class="spine"></div><div class="pagesR"></div><div class="pagesB"></div><div class="face3 cover" id="cover"><span class="shade"></span><span class="hinge"></span><div class="ttl" id="ttl"></div><div class="by"><i>LM</i>a Little Makers storybook</div><span class="sheen"></span></div></div></div>
         </div>
@@ -487,7 +594,7 @@
   <section class="sec" id="shelf">
     <div class="container">
       <div class="head c"><span class="eyebrow reveal">The toy shelf</span><h2 class="reveal">Nothing routine. Everything makes <span class="scrib">something.<svg viewBox="0 0 200 20" preserveAspectRatio="none"><path d="M2 12 Q 60 2 110 12 T 198 8" stroke="#3FB8F0" stroke-width="6" fill="none" stroke-linecap="round"/></svg></span></h2>
-        <p class="reveal">Pick a crayon to filter. Tap “What they learn” on any card to flip it.</p></div>
+        <p class="reveal">Filter by age, then tap “What they learn” on any card to flip it.</p></div>
       <div class="crayons" id="crayons" role="tablist"></div>
       <p class="shelf-count hand" id="shelfCount" aria-live="polite"></p>
       <div class="shelf" id="shelfGrid"></div>
@@ -496,16 +603,23 @@
 
   <section class="sec folk" id="folk">
     <div class="container">
-      <div class="head"><span class="eyebrow reveal">A trip across India</span><h2 class="reveal">Little hands, <span style="color:var(--sun)">Indian art.</span></h2>
-        <p class="reveal">Each kit starts with the story of where the art comes from, then lets them paint it the way artists have for generations.</p></div>
+      <div class="head"><span class="eyebrow reveal">Folk Art Kit · pack your own</span><h2 class="reveal">Pack a box of <span style="color:var(--sun)">Indian art.</span></h2>
+        <p class="reveal">Each style comes with outline sheets, the right colours and a short story of where it comes from. Swipe through the styles and pack the ones your child will love.</p></div>
       <div class="trail">
-        <svg class="path" viewBox="0 0 1200 300" preserveAspectRatio="none" aria-hidden="true"><path d="M20 120 C 200 300, 300 0, 480 150 S 760 280, 900 110 S 1120 40, 1180 160" fill="none" stroke="#FFC83D" stroke-width="4" stroke-linecap="round"/></svg>
         <div class="stops">
-          <div class="stop" style="--c:#FFC83D"><span class="pin">Bihar</span><svg class="art" viewBox="0 0 160 110" fill="none" stroke="#1E1B3A" stroke-width="3" stroke-linecap="round"><path d="M20 55c30-35 90-35 120 0-30 35-90 35-120 0z"/><circle cx="112" cy="50" r="6"/><path d="M40 55h50M50 42v26M64 38v34M78 42v26M140 55l14-14v28z"/></svg><h3>Madhubani</h3><p>Fish, peacocks and suns in bold double lines.</p></div>
-          <div class="stop" style="--c:#F4EBDC"><span class="pin">Maharashtra</span><svg class="art" viewBox="0 0 160 110" fill="none" stroke="#1E1B3A" stroke-width="3" stroke-linecap="round"><circle cx="50" cy="20" r="7"/><path d="M50 27 38 47h24zM50 47l12 20H38zM38 47l-14-8M62 47l14-8M42 67l-6 18M58 67l6 18"/><circle cx="110" cy="20" r="7"/><path d="M110 27 98 47h24zM110 47l12 20H98zM98 47l-14 8M122 47l14 8M102 67l-6 18M118 67l6 18"/></svg><h3>Warli</h3><p>Stick figures that dance, farm and celebrate.</p></div>
-          <div class="stop" style="--c:#FF8FB1"><span class="pin">Madhya Pradesh</span><svg class="art" viewBox="0 0 160 110" fill="none" stroke="#1E1B3A" stroke-width="3" stroke-linecap="round"><path d="M30 80c0-30 20-50 50-50s50 20 50 50z"/><path d="M45 72h70M50 62h60M58 52h44M66 42h28"/><path d="M130 80l12-20M30 80l-10-16"/></svg><h3>Gond</h3><p>Animals filled with dots and dashes, full of life.</p></div>
-          <div class="stop" style="--c:#7FD3F7"><span class="pin">Andhra Pradesh</span><svg class="art" viewBox="0 0 160 110" fill="none" stroke="#1E1B3A" stroke-width="3" stroke-linecap="round"><circle cx="80" cy="55" r="38"/><circle cx="80" cy="55" r="22"/><path d="M80 17v76M42 55h76M53 28l54 54M107 28 53 82"/></svg><h3>Kalamkari</h3><p>Story scenes drawn with a pen-like brush.</p></div>
-          <div class="stop" style="--c:#8EE0B4"><span class="pin">Rajasthan</span><svg class="art" viewBox="0 0 160 110" fill="none" stroke="#1E1B3A" stroke-width="3" stroke-linecap="round"><rect x="44" y="18" width="72" height="72" rx="10"/><path d="M80 28c10 10 10 42 0 52-10-10-10-42 0-52zM54 54c10-10 42-10 52 0-10 10-42 10-52 0z"/></svg><h3>Block printing</h3><p>Stamp flowers and elephants onto cloth.</p></div>
+          <button class="stop" type="button" aria-pressed="false" style="--c:#FFC83D"><span class="pin">Bihar</span><svg class="art" viewBox="0 0 160 110" fill="none" stroke="#1E1B3A" stroke-width="3" stroke-linecap="round"><path d="M20 55c30-35 90-35 120 0-30 35-90 35-120 0z"/><circle cx="112" cy="50" r="6"/><path d="M40 55h50M50 42v26M64 38v34M78 42v26M140 55l14-14v28z"/></svg><h3>Madhubani</h3><p>Fish, peacocks and suns in bold double lines.</p><span class="pick"><i></i><em>Pack it</em></span></button>
+          <button class="stop" type="button" aria-pressed="false" style="--c:#F4EBDC"><span class="pin">Maharashtra</span><svg class="art" viewBox="0 0 160 110" fill="none" stroke="#1E1B3A" stroke-width="3" stroke-linecap="round"><circle cx="50" cy="20" r="7"/><path d="M50 27 38 47h24zM50 47l12 20H38zM38 47l-14-8M62 47l14-8M42 67l-6 18M58 67l6 18"/><circle cx="110" cy="20" r="7"/><path d="M110 27 98 47h24zM110 47l12 20H98zM98 47l-14 8M122 47l14 8M102 67l-6 18M118 67l6 18"/></svg><h3>Warli</h3><p>Stick figures that dance, farm and celebrate.</p><span class="pick"><i></i><em>Pack it</em></span></button>
+          <button class="stop" type="button" aria-pressed="false" style="--c:#FF8FB1"><span class="pin">Madhya Pradesh</span><svg class="art" viewBox="0 0 160 110" fill="none" stroke="#1E1B3A" stroke-width="3" stroke-linecap="round"><path d="M30 80c0-30 20-50 50-50s50 20 50 50z"/><path d="M45 72h70M50 62h60M58 52h44M66 42h28"/><path d="M130 80l12-20M30 80l-10-16"/></svg><h3>Gond</h3><p>Animals filled with dots and dashes, full of life.</p><span class="pick"><i></i><em>Pack it</em></span></button>
+          <button class="stop" type="button" aria-pressed="false" style="--c:#7FD3F7"><span class="pin">Andhra Pradesh</span><svg class="art" viewBox="0 0 160 110" fill="none" stroke="#1E1B3A" stroke-width="3" stroke-linecap="round"><circle cx="80" cy="55" r="38"/><circle cx="80" cy="55" r="22"/><path d="M80 17v76M42 55h76M53 28l54 54M107 28 53 82"/></svg><h3>Kalamkari</h3><p>Story scenes drawn with a pen-like brush.</p><span class="pick"><i></i><em>Pack it</em></span></button>
+          <button class="stop" type="button" aria-pressed="false" style="--c:#8EE0B4"><span class="pin">Rajasthan</span><svg class="art" viewBox="0 0 160 110" fill="none" stroke="#1E1B3A" stroke-width="3" stroke-linecap="round"><rect x="44" y="18" width="72" height="72" rx="10"/><path d="M80 28c10 10 10 42 0 52-10-10-10-42 0-52zM54 54c10-10 42-10 52 0-10 10-42 10-52 0z"/></svg><h3>Block printing</h3><p>Stamp flowers and elephants onto cloth.</p><span class="pick"><i></i><em>Pack it</em></span></button>
+        </div>
+        <div class="kitbox" id="kitbox">
+          <div class="kb-lid" aria-hidden="true"></div>
+          <div class="kb-body">
+            <div class="kb-stamp"><b>Little Makers</b><span>Folk Art Kit</span></div>
+            <div class="kb-slots" id="kbSlots"></div>
+            <div class="kb-foot"><span id="folkTxt">Your kit is empty. Tap <b>Pack it</b> on a style.</span><button class="kbtn" id="folkAdd" type="button" disabled>Add kit to my list</button></div>
+          </div>
         </div>
       </div>
     </div>
@@ -694,7 +808,8 @@
   const bk = $('#bk'), ttl = $('#ttl'), cover = $('#cover'), bkOrder = $('#bkOrder'), book = $('#book');
   const drawBook = swap => {
     const name = (bk.value.trim() || (gen === 'girl' ? 'Ananya' : 'Arjun')).replace(/[<>&"]/g, '').slice(0, 12), S = SC[adv];
-    cover.style.setProperty('--img', `url('${coverImg(adv, gen)}')`); book.style.setProperty('--sp', S.sp);
+    cover.style.setProperty('--img', `url('${coverImg(adv, gen)}')`);
+    $$('#adv button').forEach(b => { b.querySelector('img').src = coverImg(b.dataset.a, gen); }); book.style.setProperty('--sp', S.sp);
     ttl.innerHTML = `<small>A story about</small><span class="nm">${name}</span><br>${S.t}`;
     bkOrder.href = wa(`Hi Little Makers! I'd like the storybook "${name} ${S.t}" (${adv} adventure, ${gen}).`);
     if (swap && !reduce) { cover.classList.remove('swap'); void cover.offsetWidth; cover.classList.add('swap'); }
@@ -722,9 +837,10 @@
   const tick = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
   const ageLabel = a => a[0] === 'all' ? 'All ages' : `Age ${a[0].replace('-', '–')}`;
   const list = new Set();
-  const F = [['everything', 'Show all', '#1E1B3A'], ['3-5', 'Age 3–5', '#FF6F9C'], ['6-8', 'Age 6–8', '#3FB8F0'], ['9-12', 'Age 9–12', '#3DBE7A'], ['all', 'All ages', '#FF8A3D'], ['pers', 'Personalised', '#8B6CEF']];
+  const F = [['everything', 'All kits', '#1E1B3A'], ['3-5', 'Age 3–5', '#FF6F9C'], ['6-8', 'Age 6–8', '#3FB8F0'], ['9-12', 'Age 9–12', '#3DBE7A'], ['all', 'All ages', '#FF8A3D'], ['pers', 'Personalised', '#8B6CEF']];
   const cr = $('#crayons');
-  cr.innerHTML = F.map(([k, l, c], i) => `<button class="crayon${i ? '' : ' on'}" type="button" role="tab" aria-selected="${!i}" data-f="${k}" style="--c:${c}">${l}</button>`).join('');
+  const cnt = k => P.filter(p => k === 'everything' || (k === 'pers' ? p.pers : p.ages.includes(k))).length;
+  cr.innerHTML = F.map(([k, l, c], i) => `<button class="crayon${i ? '' : ' on'}" type="button" role="tab" aria-selected="${!i}" data-f="${k}" style="--c:${c}"><i></i>${l}<b>${cnt(k)}</b></button>`).join('');
   let cur = 'everything';
   const addBtn = id => list.has(id) ? `${tick} Added` : `${plus} Add`;
   const card = (p, i) => {
@@ -751,7 +867,7 @@
     ct.textContent = list.size; bag.classList.toggle('show', list.size > 0); document.body.classList.toggle('has-list', list.size > 0);
     $('#bagTx').textContent = list.size === 1 ? 'kit in your list' : 'kits in your list';
     ct.classList.remove('bump'); void ct.offsetWidth; ct.classList.add('bump');
-    send.href = wa(`Hi Little Makers! I'd like prices and photos for:\n${P.filter(p => list.has(p.id)).map(p => '• ' + p.name).join('\n')}\n\nChild's age: `);
+    send.href = wa(`Hi Little Makers! I'd like prices and photos for:\n${P.filter(p => list.has(p.id)).map(p => '• ' + p.name + (p.id === 'folk' && window.__folkStyles && window.__folkStyles.size ? ` (${[...window.__folkStyles].join(', ')})` : '')).join('\n')}\n\nChild's age: `);
   };
   const flyTo = btn => {
     if (reduce) return; const a = btn.getBoundingClientRect(), d = document.createElement('span'); d.className = 'fly';
@@ -766,6 +882,29 @@
     b.closest('.pol').querySelectorAll('.add').forEach(x => { x.classList.toggle('on', list.has(id)); x.innerHTML = addBtn(id); });
     sync(); if (list.has(id)) flyTo(b);
   });
+  /* folk art chooser: pack styles into the kit box */
+  const dropIn = card => {
+    if (reduce) return;
+    const a = card.querySelector('svg.art').getBoundingClientRect(), box = $('#kitbox').getBoundingClientRect();
+    const f = card.querySelector('svg.art').cloneNode(true); f.classList.add('kb-fly');
+    f.style.cssText = `left:${a.left}px;top:${a.top}px;width:${a.width}px;height:${a.height}px;background:${card.style.getPropertyValue('--c')}`;
+    document.body.appendChild(f);
+    f.animate([{ transform: 'translate(0,0) scale(1) rotate(0)' }, { transform: `translate(${box.left + box.width / 2 - a.left - a.width / 2}px,${box.top + 40 - a.top - a.height / 2}px) scale(.35) rotate(25deg)`, opacity: .4 }], { duration: 700, easing: 'cubic-bezier(.5,-.3,.6,1)' }).onfinish = () => { f.remove(); $('#kitbox').animate([{ transform: 'scale(1)' }, { transform: 'scale(1.03) rotate(-1deg)' }, { transform: 'scale(1)' }], { duration: 350 }); };
+  };
+  const styles = new Set(), folkTxt = $('#folkTxt'), folkAdd = $('#folkAdd');
+  const folkSync = () => {
+    folkTxt.innerHTML = styles.size ? `<b>${styles.size} of 5</b> styles packed` : 'Your kit is empty. Tap <b>Pack it</b> on a style.';
+    $('#kbSlots').innerHTML = [...styles].map((n, i) => { const st = $$('.stop').find(x => x.querySelector('h3').textContent === n); return `<span class="kb-sheet" style="--c:${st.style.getPropertyValue('--c')};--r:${[-4, 3, -2, 5, -3][i % 5]}deg">${st.querySelector('svg').outerHTML}<b>${n}</b></span>`; }).join('');
+    folkAdd.disabled = !styles.size; $('#kitbox').classList.toggle('has', styles.size > 0);
+    folkAdd.textContent = list.has('folk') && styles.size ? 'Update my list' : 'Add kit to my list';
+  };
+  $$('.stop').forEach(b => b.addEventListener('click', () => {
+    const n = b.querySelector('h3').textContent; styles.has(n) ? styles.delete(n) : styles.add(n);
+    const on = styles.has(n); b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); b.querySelector('em').textContent = on ? 'Packed' : 'Pack it'; if (on) dropIn(b);
+    folkSync();
+  }));
+  folkAdd.addEventListener('click', () => { if (!styles.size) return; list.add('folk'); render(); sync(); folkSync(); flyTo(folkAdd); });
+  window.__folkStyles = styles;
   render(); sync();
 })();
 </script>
