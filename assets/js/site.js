@@ -179,7 +179,7 @@ function tick() {
   const d = Math.max(0, Math.floor(diff / 864e5)), h = Math.max(0, Math.floor(diff / 36e5) % 24), m = Math.max(0, Math.floor(diff / 6e4) % 60), s = Math.max(0, Math.floor(diff / 1e3) % 60);
   $$('[data-countdown-inline]').forEach(el => el.textContent = diff > 0 ? `Diwali in ${d}d ${h}h ${m}m` : 'Shubh Deepavali! Gifting open till Bhai Dooj');
   $$('[data-countdown]').forEach(el => {
-    if (diff <= 0) { el.innerHTML = '<span class="chip chip--gold">✨ Shubh Deepavali from team Avora</span>'; return; }
+    if (diff <= 0) { const wrap = el.closest('.hero-meta'); (wrap || el).remove(); return; }
     el.innerHTML = [[d, 'Days'], [h, 'Hrs'], [m, 'Min'], [s, 'Sec']].map(([v, l]) => `<div class="unit"><b>${String(v).padStart(2, '0')}</b><small>${l}</small></div>`).join('');
   });
 }
