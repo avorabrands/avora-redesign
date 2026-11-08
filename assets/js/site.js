@@ -13,22 +13,17 @@ const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 let logoN = 0;
 window.logoSVG = () => {
   const k = 'lg' + (logoN++);
-  return `<svg viewBox="0 -16 520 136" aria-label="Avora Brands" role="img"><defs>
+  /* Real Avora mark from avorabrands.in + live-text wordmark (gold "BRANDS") + Diwali diya */
+  return `<span class="brand-lockup" role="img" aria-label="Avora Brands">
+<img class="brand-mark" src="images/logo-mark.png" alt="" width="412" height="240">
+<span class="brand-word" aria-hidden="true"><b>ΛVORΛ</b><i>BRANDS</i></span>
+<svg class="brand-diya" viewBox="-6 -40 56 72" aria-hidden="true"><defs>
 <linearGradient id="${k}g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFE7A3"/><stop offset=".45" stop-color="#F5B942"/><stop offset="1" stop-color="#C97A12"/></linearGradient>
-<linearGradient id="${k}t" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#2F6FD6"/><stop offset=".6" stop-color="#4C8DF0"/><stop offset="1" stop-color="#F5B942"/></linearGradient>
 <radialGradient id="${k}f" cx=".5" cy=".7" r=".6"><stop offset="0" stop-color="#FFF6D6"/><stop offset=".45" stop-color="#FFC24A"/><stop offset="1" stop-color="#FF7A1A"/></radialGradient>
 <radialGradient id="${k}w" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFC24A" stop-opacity=".55"/><stop offset="1" stop-color="#FFC24A" stop-opacity="0"/></radialGradient></defs>
-<g transform="translate(4 6)"><path d="M2 104 L48 10 L66 46 L44 92 C38 76 26 72 14 86 Z" fill="currentColor"/>
-<path d="M50 58 L68 102 L106 30" fill="none" stroke="url(#${k}t)" stroke-width="12"/>
-<path d="M98 22 L122 8 L116 36 Z" fill="url(#${k}g)"/><circle cx="124" cy="8" r="22" fill="url(#${k}w)"/>
-<g class="logo-burst" stroke="url(#${k}g)" stroke-width="3" stroke-linecap="round"><line x1="128" y1="2" x2="136" y2="-6"/><line x1="131" y1="10" x2="142" y2="10"/><line x1="126" y1="15" x2="133" y2="23"/><line x1="119" y1="0" x2="118" y2="-9"/></g>
-<circle cx="144" cy="-1" r="2.4" fill="#FFE7A3"/><circle cx="139" cy="22" r="1.8" fill="#FFC24A"/></g>
-<g font-family="Manrope,Arial,sans-serif"><text x="176" y="68" font-size="54" font-weight="500" letter-spacing="15" fill="currentColor">AVORA</text>
-<line x1="178" y1="94" x2="226" y2="94" stroke="url(#${k}g)" stroke-width="2"/><text x="236" y="101" font-size="19" font-weight="700" letter-spacing="9" fill="url(#${k}g)">BRANDS</text>
-<line x1="364" y1="94" x2="412" y2="94" stroke="url(#${k}g)" stroke-width="2"/></g>
-<g transform="translate(440 52)"><ellipse cx="22" cy="-12" rx="22" ry="26" fill="url(#${k}w)" class="logo-glow"/>
+<ellipse cx="22" cy="-12" rx="22" ry="26" fill="url(#${k}w)" class="logo-glow"/>
 <path class="logo-flame" d="M22 -30 C30 -18 30 -8 22 -2 C14 -8 14 -18 22 -30 Z" fill="url(#${k}f)"/>
-<path d="M0 4 C6 30 38 30 44 4 Z" fill="url(#${k}g)"/><path d="M-4 4 H48" stroke="url(#${k}g)" stroke-width="3" stroke-linecap="round"/></g></svg>`;
+<path d="M0 4 C6 30 38 30 44 4 Z" fill="url(#${k}g)"/><path d="M-4 4 H48" stroke="url(#${k}g)" stroke-width="3" stroke-linecap="round"/></svg></span>`;
 };
 
 const I = {
@@ -38,7 +33,15 @@ const I = {
   li: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0M.5 8.5h4V24h-4zM8.5 8.5h3.8v2.1h.06c.53-1 1.83-2.1 3.77-2.1 4.03 0 4.77 2.65 4.77 6.1V24h-4v-7.7c0-1.84-.03-4.2-2.56-4.2-2.56 0-2.95 2-2.95 4.07V24h-4z"/></svg>',
   mail: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>',
   chev: '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m6 9 6 6 6-6"/></svg>',
-  left: '<svg width="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>'
+  left: '<svg width="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>',
+  phone: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>',
+  mail2: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="3"/><path d="m3 7 9 6.5L21 7"/></svg>',
+  pin: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 5.5-8 12-8 12s-8-6.5-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>',
+  pen: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="m2 2 7.6 7.6"/><circle cx="11" cy="11" r="2"/></svg>',
+  printer: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8" rx="1"/><path d="M18 12h.01"/></svg>',
+  gift: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 0 1 0 5"/></svg>',
+  spark: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.4 4.6 2.4 7.6 6 9-3.6 1.4-5.6 4.4-6 9-.4-4.6-2.4-7.6-6-9 3.6-1.4 5.6-4.4 6-9z"/></svg>',
+  palette: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a10 10 0 1 1 10-10c0 2.8-2.2 4-4 4h-2a2 2 0 0 0-1.5 3.3A1.6 1.6 0 0 1 12 22z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10.5" cy="7" r="1.2"/><circle cx="15.5" cy="7.5" r="1.2"/></svg>',
 };
 window.ICONS = I;
 
@@ -48,26 +51,26 @@ const NAV = [
   { label: 'Services', key: 'services', mega: true },
   { href: 'work.html', label: 'Work', key: 'work' },
   { href: 'about.html', label: 'About', key: 'about' },
-  { href: 'blog.html', label: 'Journal', key: 'blog' },
+  { href: 'blog.html', label: 'Insights', key: 'blog' },
+  { href: 'careers.html', label: 'Careers', key: 'careers' },
   { href: 'contact.html', label: 'Contact', key: 'contact' }
 ];
 const darkTop = document.body.classList.contains('dark-top');
 
 function header() {
   const links = NAV.map(n => n.mega
-    ? `<li><button aria-haspopup="true" ${['design', 'print'].includes(page) ? 'aria-current="page"' : ''}>Services ${I.chev}</button>
+    ? `<li><button aria-haspopup="true" ${['design', 'print', 'kids'].includes(page) ? 'aria-current="page"' : ''}>Services ${I.chev}</button>
         <div class="mega" role="menu">
-          <a href="design.html"><span class="ic">✦</span><span><strong>Design Studio</strong><small>Branding, websites, apps, social & packaging design</small></span></a>
-          <a href="print.html"><span class="ic gold">▣</span><span><strong>Print & Merch</strong><small>Visiting cards, apparel, packaging, signage — delivered</small></span></a>
-          <a href="diwali.html"><span class="ic gold">🪔</span><span><strong>Diwali Gifting</strong><small>Custom hampers & personalised gifts for teams and clients</small></span></a>
-          <a href="work.html"><span class="ic">◎</span><span><strong>Case Studies</strong><small>12 projects across FinTech, health, media & devotion</small></span></a>
+          <a href="design.html"><span class="ic">${I.pen}</span><span><strong>Design Studio</strong><small>Branding, websites, apps, social & packaging design</small></span></a>
+          <a href="print.html"><span class="ic gold">${I.printer}</span><span><strong>Print & Merch</strong><small>Visiting cards, apparel, packaging, signage — delivered</small></span></a>
+          <a href="diwali.html"><span class="ic rose">${I.gift}</span><span><strong>Diwali Gifting</strong><small>Custom hampers & personalised gifts for teams and clients</small></span></a>
+          <a href="kids.html"><span class="ic kids">${I.palette}</span><span><strong>Little Makers <em class="new-tag">Kids</em></strong><small>Creative kits, folk art & gifts made from kids' imagination</small></span></a>
         </div></li>`
     : `<li><a href="${n.href}" class="${n.cls || ''}" ${page === n.key ? 'aria-current="page"' : ''}>${n.label}</a></li>`).join('');
   return `
-  <div class="announce" role="region" aria-label="Announcement"><div class="container">
-    <span>🪔 <b>Diwali gifting is open</b><span class="hide-sm"> — custom hampers & personalised gifts, branded and delivered</span> · <span class="countdown-inline" data-countdown-inline></span></span>
-    <a href="diwali.html">Build a hamper</a>
-  </div></div>
+  <div class="announce" role="region" aria-label="Announcement">
+    <div class="an-track"><div class="an-row"><span class="an-i"><b>Diwali gifting is open</b></span><span class="an-s" aria-hidden="true">${I.spark}</span><span class="an-i">Custom hampers &amp; personalised gifts</span><span class="an-s" aria-hidden="true">${I.spark}</span><span class="an-i">Your logo on every box</span><span class="an-s" aria-hidden="true">${I.spark}</span><span class="an-i">Branded, packed and delivered to your office</span><span class="an-s" aria-hidden="true">${I.spark}</span><span class="an-i"><span class="countdown-inline" data-countdown-inline></span></span><span class="an-s" aria-hidden="true">${I.spark}</span><span class="an-i"><a href="diwali.html">Build a hamper →</a></span><span class="an-s" aria-hidden="true">${I.spark}</span></div><div class="an-row" aria-hidden="true"><span class="an-i"><b>Diwali gifting is open</b></span><span class="an-s" aria-hidden="true">${I.spark}</span><span class="an-i">Custom hampers &amp; personalised gifts</span><span class="an-s" aria-hidden="true">${I.spark}</span><span class="an-i">Your logo on every box</span><span class="an-s" aria-hidden="true">${I.spark}</span><span class="an-i">Branded, packed and delivered to your office</span><span class="an-s" aria-hidden="true">${I.spark}</span><span class="an-i"><span class="countdown-inline" data-countdown-inline></span></span><span class="an-s" aria-hidden="true">${I.spark}</span><span class="an-i"><a href="diwali.html">Build a hamper →</a></span><span class="an-s" aria-hidden="true">${I.spark}</span></div></div>
+  </div>
   <header class="site-header ${darkTop ? 'on-dark-top' : ''}">
     <div class="container nav">
       <a href="index.html" class="brand" aria-label="Avora Brands home">${logoSVG()}</a>
@@ -85,9 +88,10 @@ function header() {
       <a href="diwali.html">Diwali Gifts <small>NEW</small></a>
       <a href="design.html">Design Studio</a>
       <a href="print.html">Print & Merch</a>
+      <a href="kids.html">Little Makers <small>KIDS</small></a>
       <a href="work.html">Work</a>
       <a href="about.html">About</a>
-      <a href="blog.html">Journal</a>
+      <a href="blog.html">Insights</a>
       <a href="careers.html">Careers</a>
       <a href="contact.html">Contact</a>
     </nav>
@@ -113,9 +117,9 @@ function footer() {
         <div><h5>Services</h5><ul>
           <li><a href="design.html#branding">Branding & Identity</a></li><li><a href="design.html#website">Website Design</a></li>
           <li><a href="design.html#app">Mobile App Design</a></li><li><a href="design.html#social">Social Media Design</a></li>
-          <li><a href="print.html">Print & Merch</a></li><li><a href="diwali.html">Diwali Gifting</a></li></ul></div>
+          <li><a href="print.html">Print & Merch</a></li><li><a href="diwali.html">Diwali Gifting</a></li><li><a href="kids.html">Little Makers (Kids)</a></li></ul></div>
         <div><h5>Company</h5><ul>
-          <li><a href="work.html">Case Studies</a></li><li><a href="about.html">About Us</a></li><li><a href="blog.html">Journal</a></li>
+          <li><a href="work.html">Our Work</a></li><li><a href="about.html">About Us</a></li><li><a href="blog.html">Insights</a></li>
           <li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></div>
         <div><h5>Visit & talk</h5><ul>
           <li>${SITE.address}</li>
@@ -150,7 +154,7 @@ $$('[data-work]').forEach(el => {
 $$('[data-reviews]').forEach(el => el.innerHTML = REVIEWS.map((r, i) => `<figure class="review ${i === 0 ? 'big' : ''} reveal" style="--d:${i * .08}s">
   <span class="stars-5">★★★★★</span><blockquote>“${r.text}”</blockquote>
   <figcaption class="who"><span class="av" style="background:${r.color}">${r.name[0]}</span><span><b>${r.name}</b><small>Google review</small></span></figcaption></figure>`).join(''));
-$$('[data-faces]').forEach(el => el.innerHTML = [...TEAM.cofounders, ...TEAM.team].map(m => `<img src="${m.img}" alt="${m.name}" title="${m.name} — ${m.role}" loading="lazy">`).join(''));
+$$('[data-faces]').forEach(el => { const all = [...TEAM.cofounders, ...TEAM.team]; el.innerHTML = all.slice(0, 4).map(m => `<img src="${m.img}" alt="${m.name}" title="${m.name} — ${m.role}" loading="lazy">`).join('') + (all.length > 4 ? `<a class="face-more" href="about.html" aria-label="Meet ${all.length - 4} more team members">${all.length - 4}+</a>` : ''); });
 renderIcons(); renderWaLinks();
 
 /* header state */
@@ -245,7 +249,96 @@ $$('form[data-wa]').forEach(f => f.addEventListener('submit', e => {
   const ok = $('.form-ok', f); if (ok) { ok.style.display = 'block'; }
   if (f.closest('[data-fireworks-host]')) burstAt(f.getBoundingClientRect());
 }));
-$$('[data-news]').forEach(f => f.addEventListener('submit', e => { e.preventDefault(); f.innerHTML = '<span style="color:#7BE3A6;font-weight:700">Thank you! You\'re on the list. 🪔</span>'; }));
+/* ---------- Newsletter: real welcome email via FormSubmit ---------- */
+$$('[data-news]').forEach(f => f.addEventListener('submit', async e => {
+  e.preventDefault();
+  const input = f.querySelector('input[type=email]'), btn = f.querySelector('button'), email = input.value.trim();
+  if (!input.checkValidity()) { input.reportValidity(); return; }
+  btn.disabled = true; btn.textContent = 'Sending…';
+  const note = (html, ok) => { let n = f.nextElementSibling; if (!n || !n.classList.contains('news-note')) { n = document.createElement('p'); f.after(n); } n.className = 'news-note ' + (ok ? 'ok' : 'err'); n.innerHTML = html; };
+  try {
+    const r = await fetch('https://formsubmit.co/ajax/' + SITE.newsletterInbox, {
+      method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        email, _subject: 'New newsletter subscriber — Avora Brands', _template: 'box', _captcha: 'false',
+        _autoresponse: "Hi there,\n\nThanks for joining the Avora Brands list! Once a month we'll send you practical branding, print and design tips for growing businesses — no spam, ever.\n\nNeed something designed or printed sooner? Just reply to this email or WhatsApp us on " + SITE.phone + ".\n\nWarm wishes,\nTeam Avora Brands\n" + SITE.address
+      })
+    });
+    const d = await r.json().catch(() => ({}));
+    if (!r.ok || String(d.success) === 'false') throw new Error(d.message || 'failed');
+    f.innerHTML = '<span class="news-ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>You\'re in! Check your inbox for a welcome email.</span>';
+    note('Sent to <b>' + email.replace(/[<>&"]/g, '') + '</b>. Not there? Check Promotions or Spam.', true);
+  } catch (err) {
+    btn.disabled = false; btn.textContent = 'Join';
+    note('Couldn\'t subscribe right now. Please try again, or <a href="' + wa('Hi Avora! Please add me to your monthly tips list: ' + email) + '" target="_blank" rel="noopener">join on WhatsApp</a>.', false);
+  }
+}));
+
+/* ---------- email links: open mail app, and always offer copy + Gmail fallback ---------- */
+document.addEventListener('click', e => {
+  const a = e.target.closest('a[href^="mailto:"]'); if (!a) return;
+  const url = new URL(a.href), to = decodeURIComponent(url.pathname), subj = url.searchParams.get('subject') || '';
+  const gmail = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(to)}${subj ? '&su=' + encodeURIComponent(subj) : ''}`;
+  let t = document.querySelector('.mail-toast');
+  if (!t) { t = document.createElement('div'); t.className = 'mail-toast'; t.setAttribute('role', 'status'); document.body.appendChild(t); }
+  t.innerHTML = `<span class="mt-ic">${I.mail}</span><span><b>${to}</b><small>No mail app opened? Use Gmail or copy the address.</small></span><a href="${gmail}" target="_blank" rel="noopener">Open Gmail</a><button type="button" aria-label="Close">✕</button>`;
+  t.querySelector('button').onclick = () => t.classList.remove('show');
+  try { navigator.clipboard.writeText(to).then(() => { t.querySelector('small').textContent = 'Address copied. No mail app opened? Use Gmail.'; }, () => {}); } catch (_) {}
+  requestAnimationFrame(() => t.classList.add('show'));
+  clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove('show'), 7000);
+});
+
+/* ---------- custom dropdowns: open below the field, in the site's style ---------- */
+(() => {
+  const chev = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>';
+  const tick = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
+  let openDd = null;
+  const close = dd => { if (!dd) return; dd.classList.remove('open', 'up'); dd.querySelector('.dd-btn').setAttribute('aria-expanded', 'false'); if (openDd === dd) openDd = null; };
+  window.enhanceSelects = (root = document) => $$('select.select, select.input', root).forEach((sel, n) => {
+    if (sel.closest('.dd')) return;
+    const id = sel.id || 'dd' + n + Math.random().toString(36).slice(2, 6);
+    const dd = document.createElement('div'); dd.className = 'dd';
+    sel.parentNode.insertBefore(dd, sel); dd.appendChild(sel); sel.classList.add('dd-native'); sel.tabIndex = -1; sel.setAttribute('aria-hidden', 'true');
+    const btn = document.createElement('button'); btn.type = 'button'; btn.className = 'dd-btn';
+    btn.setAttribute('aria-haspopup', 'listbox'); btn.setAttribute('aria-expanded', 'false');
+    const lab = document.querySelector(`label[for="${sel.id}"]`); if (lab) { lab.htmlFor = id + '-btn'; btn.id = id + '-btn'; }
+    const menu = document.createElement('ul'); menu.className = 'dd-menu'; menu.setAttribute('role', 'listbox'); menu.id = id + '-list'; btn.setAttribute('aria-controls', menu.id);
+    dd.append(btn, menu);
+    const build = () => {
+      menu.innerHTML = [...sel.options].map((o, i) => `<li role="option" tabindex="-1" data-i="${i}" aria-selected="${o.selected}" class="dd-opt${o.selected ? ' on' : ''}"><span>${o.textContent}</span><i>${tick}</i></li>`).join('');
+      btn.innerHTML = `<span>${sel.options[sel.selectedIndex]?.textContent || ''}</span><b>${chev}</b>`;
+    };
+    const opts = () => [...menu.children];
+    const pick = i => { sel.selectedIndex = i; sel.dispatchEvent(new Event('input', { bubbles: true })); sel.dispatchEvent(new Event('change', { bubbles: true })); build(); close(dd); btn.focus(); };
+    const open = () => {
+      if (openDd && openDd !== dd) close(openDd);
+      dd.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); openDd = dd;
+      const r = btn.getBoundingClientRect(), need = Math.min(menu.scrollHeight, 280) + 16;
+      dd.classList.toggle('up', innerHeight - r.bottom < need && r.top > need);
+      (opts()[sel.selectedIndex] || opts()[0])?.focus({ preventScroll: true });
+    };
+    build();
+    sel.addEventListener('change', build);
+    btn.addEventListener('click', () => dd.classList.contains('open') ? close(dd) : open());
+    btn.addEventListener('keydown', e => { if (['ArrowDown', 'ArrowUp', 'Enter', ' '].includes(e.key)) { e.preventDefault(); open(); } });
+    menu.addEventListener('click', e => { const li = e.target.closest('.dd-opt'); if (li) pick(+li.dataset.i); });
+    menu.addEventListener('keydown', e => {
+      const list = opts(), k = list.indexOf(document.activeElement);
+      if (e.key === 'ArrowDown') { e.preventDefault(); list[Math.min(k + 1, list.length - 1)].focus(); }
+      else if (e.key === 'ArrowUp') { e.preventDefault(); list[Math.max(k - 1, 0)].focus(); }
+      else if (e.key === 'Home') { e.preventDefault(); list[0].focus(); }
+      else if (e.key === 'End') { e.preventDefault(); list[list.length - 1].focus(); }
+      else if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); if (k >= 0) pick(k); }
+      else if (e.key === 'Escape') { e.preventDefault(); close(dd); btn.focus(); }
+      else if (e.key === 'Tab') close(dd);
+    });
+    sel.form?.addEventListener('reset', () => setTimeout(build));
+    sel.addEventListener('invalid', () => { dd.classList.add('bad'); btn.focus(); });
+    sel.addEventListener('change', () => dd.classList.remove('bad'));
+  });
+  document.addEventListener('click', e => { if (openDd && !openDd.contains(e.target)) close(openDd); });
+  enhanceSelects();
+})();
 
 /* ---------- fireworks ---------- */
 const fwHosts = [];
@@ -303,3 +396,33 @@ $$('[data-logos]').forEach(m => {
 $$('.faq').forEach(f => $$('details', f).forEach(d => d.addEventListener('toggle', () => { if (d.open) $$('details', f).forEach(o => o !== d && (o.open = false)); })));
 
 watchReveals();
+
+/* ---------- Missing image fallback: show a branded placeholder instead of a broken icon ---------- */
+const markMissing = img => { img.classList.add('img-missing'); img.removeAttribute('srcset'); img.src = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='; };
+document.addEventListener('error', e => { const t = e.target; if (t.tagName === 'IMG' && !t.classList.contains('img-missing')) markMissing(t); }, true);
+document.querySelectorAll('img').forEach(i => { if (i.complete && i.naturalWidth === 0 && i.getAttribute('src')) markMissing(i); });
+
+/* ---------- Product thumbnail switcher ---------- */
+document.querySelectorAll('.m-thumbs').forEach(t => t.addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return;
+  const main = t.parentElement.querySelector(':scope > img');
+  t.querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b));
+  main.style.opacity = 0; setTimeout(() => { main.src = b.dataset.src; main.style.opacity = 1; }, 180);
+}));
+
+/* ---------- Before / after slider ---------- */
+document.querySelectorAll('[data-vs]').forEach(v => {
+  const r = v.querySelector('.vs-range');
+  const set = () => v.style.setProperty('--pos', r.value + '%');
+  r.addEventListener('input', set); set();
+  // gentle hint animation the first time it scrolls into view
+  const io2 = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    io2.disconnect(); let t = 0; const seq = [50, 70, 30, 50];
+    const step = () => { if (t >= seq.length) return; const from = +r.value, to = seq[t++], t0 = performance.now();
+      const tick = now => { const k = Math.min(1, (now - t0) / 600); r.value = from + (to - from) * (1 - Math.pow(1 - k, 3)); set(); if (k < 1) requestAnimationFrame(tick); else setTimeout(step, 150); };
+      requestAnimationFrame(tick); };
+    setTimeout(step, 500);
+  }), { threshold: .5 });
+  io2.observe(v);
+});

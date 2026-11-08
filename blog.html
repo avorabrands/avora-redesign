@@ -3,13 +3,86 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Journal — Branding, Design & Print Guides | Avora Brands</title>
-<meta name="description" content="Practical guides on branding, UI/UX, social media sizes, print (CMYK vs RGB) and colour psychology from the Avora Brands studio.">
+<title>Insights — Branding, Design, Print & Gifting Guides | Avora Brands</title>
+<meta name="description" content="Practical guides on branding, UI/UX, print and Diwali gifting, written by the Avora Brands founders and team.">
 <meta name="theme-color" content="#060A18">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪔</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/site.css">
+<style>
+  .ins{padding-top:72px}
+  /* feature */
+  .ins-feat{display:grid;grid-template-columns:1.35fr 1fr;gap:0;border-radius:28px;overflow:hidden;background:#fff;border:1px solid var(--line);box-shadow:0 30px 60px -40px rgba(10,16,41,.35);transition:.45s var(--ease)}
+  .ins-feat:hover{transform:translateY(-4px)}
+  .ins-feat .im{position:relative;min-height:440px;overflow:hidden}
+  .ins-feat .im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+  .ins-feat:hover .im img,.ins-card:hover .im img{transform:scale(1.05)}
+  .ins-feat .tx{padding:44px;display:flex;flex-direction:column;gap:16px;justify-content:center}
+  .ins-feat h2{font-size:clamp(26px,2.6vw,36px);line-height:1.15;letter-spacing:-.02em;font-weight:800;color:var(--ink)}
+  .ins-feat p{color:var(--muted);font-size:16.5px}
+  .ins-tag{position:absolute;left:18px;top:18px;display:inline-flex;gap:8px;align-items:center;padding:8px 14px;border-radius:999px;font-size:12.5px;font-weight:800;letter-spacing:.04em;color:#fff;background:rgba(10,16,41,.45);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+  .ins-tag.gold{background:var(--gold);color:var(--navy-950);border-color:transparent}
+  .ins-by{display:flex;align-items:center;gap:12px;margin-top:6px}
+  .ins-by img{width:46px;height:46px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid #fff;box-shadow:0 0 0 1px var(--line)}
+  .ins-by b{display:block;font-size:15px;color:var(--ink)}
+  .ins-by small{font-size:13px;color:var(--muted);font-weight:600}
+  .ins-go{display:inline-flex;align-items:center;gap:8px;font-weight:800;color:var(--ink);margin-top:8px}
+  .ins-go .ic{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--navy-950);color:#fff;transition:.35s var(--ease)}
+  .ins-go .ic svg{width:16px;height:16px}
+  .ins-feat:hover .ins-go .ic,.ins-card:hover .ins-go .ic{background:var(--gold);color:var(--navy-950);transform:translateX(4px)}
+  /* voices */
+  .ins-voices{margin:72px 0 32px;display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  .ins-voices h2{font-size:clamp(28px,3vw,40px);font-weight:800;letter-spacing:-.02em;line-height:1.1}
+  .ins-voices p{color:var(--muted);margin-top:8px;max-width:420px}
+  .vo{position:relative;display:inline-flex;align-items:center;gap:2px;padding:5px;border-radius:999px;background:#fff;border:1px solid var(--line);box-shadow:0 10px 30px -20px rgba(10,16,41,.35)}
+  .vo .pill{position:absolute;top:5px;bottom:5px;left:0;border-radius:999px;background:var(--navy-950);transition:transform .45s var(--ease),width .45s var(--ease);z-index:0}
+  .vo button{position:relative;z-index:1;display:flex;align-items:center;gap:8px;height:40px;padding:0 16px;border:0;border-radius:999px;background:none;font:inherit;font-weight:700;font-size:14px;color:var(--ink-2);cursor:pointer;white-space:nowrap;transition:color .3s}
+  .vo button.has-img{padding-left:5px}
+  .vo button img{width:30px;height:30px;border-radius:50%;object-fit:cover;object-position:top}
+  .vo button sup{font-size:11px;font-weight:800;color:var(--muted);top:-.5em;margin-left:-3px;transition:color .3s}
+  .vo button:hover{color:var(--ink)}
+  .vo button.on{color:#fff}
+  .vo button.on sup{color:var(--gold)}
+  /* grid */
+  .ins-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+  .ins-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:24px;overflow:hidden;transition:.45s var(--ease)}
+  .ins-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+  .ins-card .im{position:relative;aspect-ratio:16/10;overflow:hidden}
+  .ins-card .im img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+  .ins-card .rt{position:absolute;right:16px;top:16px;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.9);font-size:12px;font-weight:800;color:var(--ink)}
+  .ins-card .tx{padding:26px 28px 28px;display:flex;flex-direction:column;gap:12px;flex:1}
+  .ins-card h3{font-size:22px;line-height:1.25;font-weight:800;letter-spacing:-.01em;color:var(--ink)}
+  .ins-card p{color:var(--muted);font-size:15px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .ins-card .ft{margin-top:auto;padding-top:14px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .ins-card .ins-by{margin:0}
+  .ins-card .ins-by img{width:38px;height:38px}
+  .ins-card .ins-go{margin:0}
+  .ins-empty{display:none}
+  /* ask strip */
+  .ins-ask{margin-top:72px;border-radius:28px;background:var(--navy-950);color:#fff;padding:36px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;position:relative;overflow:hidden}
+  .ins-ask::after{content:"";position:absolute;right:-80px;top:-80px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(245,185,66,.35),transparent 70%)}
+  .ins-ask .fc{display:flex}
+  .ins-ask .fc img{width:54px;height:54px;border-radius:50%;object-fit:cover;object-position:top;border:3px solid var(--navy-950);margin-left:-12px}
+  .ins-ask .fc img:first-child{margin-left:0}
+  .ins-ask .l{display:flex;align-items:center;gap:20px;position:relative;z-index:1}
+  .ins-ask b{font-size:22px;display:block}
+  .ins-ask p{color:#A9B1C7;margin-top:4px}
+  .ins-ask .btn{position:relative;z-index:1}
+  .ins-voices>div:first-child{flex:1 1 420px}
+  @media (max-width:900px){
+    .ins-feat{grid-template-columns:1fr}.ins-feat .im{min-height:0;aspect-ratio:16/10}.ins-feat .tx{padding:28px}
+    .ins-grid{grid-template-columns:1fr;gap:22px}
+    .ins-voices{margin-top:56px}
+    .ins-ask{padding:28px}.ins-ask .l{flex-direction:column;align-items:flex-start}
+  }
+  @media (max-width:560px){
+    .vo{max-width:100%;overflow-x:auto;scrollbar-width:none;gap:0}
+    .vo button{flex:none;padding:0 10px;font-size:13px;gap:6px;height:36px}.vo button img{width:26px;height:26px}.vo button sup{display:none}
+    .vo button.has-img{padding-left:5px}
+    .ins-card .tx{padding:22px}
+  }
+</style>
 </head>
 <body data-page="blog" class="dark-top">
 <div data-header></div>
@@ -18,46 +91,77 @@
     <div class="stars"></div><div class="rangoli-bg"></div>
     <div class="container on-dark page-hero-split">
       <div>
-        <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><span>Journal</span></nav>
-        <span class="eyebrow reveal">The Avora Journal</span>
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><span>Insights</span></nav>
+        <span class="eyebrow reveal">Avora Insights</span>
         <h1 class="h-display mt-24" data-split>Notes from<br>the <span class="serif gold-text">studio.</span></h1>
       </div>
       <div>
-        <p class="lead reveal" style="--d:.3s">Practical, no-fluff guides on branding, design and print — written by the people who do the work every day.</p>
+        <p class="lead reveal" style="--d:.3s">Practical, no-fluff guides on branding, design, print and gifting, written by the three people who do the work every day.</p>
         <form class="news mt-24 reveal" data-news style="max-width:460px;--d:.4s"><input type="email" required placeholder="Get one guide a month" aria-label="Email"><button class="btn btn--gold btn--sm" type="submit">Subscribe</button></form>
       </div>
     </div>
   </section>
-  <section class="section" style="padding-top:64px">
+
+  <section class="section ins">
     <div class="container">
-      <div class="filters" id="bf"></div>
       <div id="feature"></div>
-      <div class="grid g-3" id="posts"></div>
+
+      <div class="ins-voices">
+        <div><span class="eyebrow reveal">Browse by topic</span><h2 class="reveal mt-8">Find the guide <span class="serif blue-text">you need.</span></h2>
+          <p class="reveal">Branding, UI/UX, print and gifting, written by the people who do the work.</p></div>
+        <div class="vo reveal" id="vo" role="tablist" aria-label="Filter by topic"></div>
+      </div>
+
+      <div class="ins-grid" id="posts"></div>
+
+      <div class="ins-ask reveal">
+        <div class="l"><div class="fc"><img src="images/founder.jpg" alt=""><img src="images/about-namratha.jpg" alt=""><img src="images/about-vignesh.jpg" alt=""></div>
+          <div><b>Have a question we haven't written about?</b><p>Ask us on WhatsApp. One of us will reply, usually the same day.</p></div></div>
+        <a class="btn btn--gold" id="askWa" href="contact.html" target="_blank" rel="noopener">Ask on WhatsApp <i data-i="arrow"></i></a>
+      </div>
     </div>
   </section>
 </main>
 <div data-footer></div>
 <script src="assets/js/data.js"></script>
 <script>
-  const fmt = d => new Date(d).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
-  const card = (p, i) => `<a class="post-card reveal" style="--d:${(i % 3) * .06}s" href="post.html?p=${p.id}" data-cat="${p.cat}">
-    <div class="cover" style="background:${p.bg}"><span class="big">${p.mark}</span></div>
-    <div class="body"><span class="chip" style="align-self:flex-start">${p.cat}</span><h3 class="h4">${p.title}</h3><p>${p.excerpt}</p>
-    <div class="meta"><span>${p.author}</span>·<span>${fmt(p.date)}</span></div></div></a>`;
-  const [first, ...rest] = POSTS;
-  document.getElementById('feature').innerHTML = `<a class="post-card post-feature reveal" href="post.html?p=${first.id}" data-cat="${first.cat}">
-    <div class="cover" style="background:${first.bg}"><span class="big" style="font-size:72px">${first.mark}</span></div>
-    <div class="body"><span class="chip chip--gold" style="align-self:flex-start">Latest · ${first.cat}</span><h2 class="h3">${first.title}</h2><p style="font-size:17px">${first.excerpt}</p>
-    <div class="meta"><span>${first.author}</span>·<span>${fmt(first.date)}</span></div><span class="link-arrow mt-16">Read the guide <i data-i="arrow"></i></span></div></a>`;
-  document.getElementById('posts').innerHTML = rest.map(card).join('');
-  const cats = ['All', ...new Set(POSTS.map(p => p.cat))];
-  const bf = document.getElementById('bf');
-  bf.innerHTML = cats.map((c, i) => `<button class="${i ? '' : 'active'}" data-c="${c}">${c}</button>`).join('');
-  bf.addEventListener('click', e => {
-    const b = e.target.closest('button'); if (!b) return;
-    bf.querySelectorAll('button').forEach(x => x.classList.toggle('active', x === b));
-    document.querySelectorAll('.post-card').forEach(c => { c.style.display = b.dataset.c === 'All' || c.dataset.cat === b.dataset.c ? '' : 'none'; c.classList.add('in'); });
-  });
+  (() => {
+    const FACE = { 'Reddy Pavan M': 'images/founder.jpg', 'Namratha E': 'images/about-namratha.jpg', 'Vignesh': 'images/about-vignesh.jpg' };
+    const ROLE = { 'Reddy Pavan M': 'Founder', 'Namratha E': 'Co-Founder', 'Vignesh': 'Business Manager' };
+    const fmt = d => new Date(d).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+    const arrow = '<span class="ic"><i data-i="arrow"></i></span>';
+    const by = p => `<div class="ins-by"><img src="${FACE[p.author]}" alt=""><div><b>${p.author}</b><small>${p.role} · ${fmt(p.date)}</small></div></div>`;
+    const [first, ...rest] = POSTS;
+    const feat = document.getElementById('feature');
+    feat.innerHTML = `<a class="ins-feat reveal" href="post.html?p=${first.id}">
+      <div class="im"><img src="${first.img}" alt=""><span class="ins-tag gold">Latest · ${first.cat}</span></div>
+      <div class="tx"><span class="muted" style="font-weight:700;font-size:13.5px">${first.read}</span><h2>${first.title}</h2><p>${first.excerpt}</p>${by(first)}<span class="ins-go">Read the guide ${arrow}</span></div></a>`;
+    const card = (p, i) => `<a class="ins-card reveal" style="--d:${(i % 2) * .08}s" href="post.html?p=${p.id}" data-c="${p.cat}">
+      <div class="im"><img src="${p.img}" alt="" loading="lazy"><span class="ins-tag">${p.cat}</span><span class="rt">${p.read}</span></div>
+      <div class="tx"><h3>${p.title}</h3><p>${p.excerpt}</p><div class="ft">${by(p)}<span class="ins-go">${arrow}</span></div></div></a>`;
+    const grid = document.getElementById('posts');
+    const render = a => {
+      const list = a === 'All' ? rest : POSTS.filter(p => p.cat === a);
+      feat.style.display = a === 'All' ? '' : 'none';
+      grid.innerHTML = list.map(card).join('');
+      if (window.renderIcons) renderIcons(grid);
+      grid.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+    };
+    const cats = [...new Set(POSTS.map(p => p.cat))];
+    const vo = document.getElementById('vo');
+    vo.innerHTML = `<span class="pill" aria-hidden="true"></span><button class="on" data-a="All" role="tab" aria-selected="true">All<sup>${POSTS.length}</sup></button>` +
+      cats.map(c => `<button data-a="${c}" role="tab" aria-selected="false">${c}<sup>${POSTS.filter(p => p.cat === c).length}</sup></button>`).join('');
+    const pill = vo.querySelector('.pill');
+    const movePill = () => { const b = vo.querySelector('button.on'); pill.style.width = b.offsetWidth + 'px'; pill.style.transform = `translateX(${b.offsetLeft}px)`; };
+    movePill(); addEventListener('resize', movePill); document.fonts && document.fonts.ready.then(movePill);
+    vo.addEventListener('click', e => {
+      const b = e.target.closest('button'); if (!b) return;
+      vo.querySelectorAll('button').forEach(x => { x.classList.toggle('on', x === b); x.setAttribute('aria-selected', x === b); });
+      movePill(); render(b.dataset.a);
+    });
+    grid.innerHTML = rest.map(card).join('');
+    document.getElementById('askWa').href = wa('Hi Avora, I have a question about ');
+  })();
 </script>
 <script src="assets/js/site.js"></script>
 </body>

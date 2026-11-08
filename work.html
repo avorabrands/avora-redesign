@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Work — Case Studies in Branding, Apps & Print | Avora Brands</title>
-<meta name="description" content="12 case studies: Tiara Clinic, Sri Veluguvani, CashAlert, Bhakti TV, Picxel AI, Local Service Finder, Swagat Stay and more.">
-<meta property="og:image" content="https://www.avorabrands.in/images/img-bhaktitv.jpg">
+<title>Our Work — Branding, Apps & Print Projects | Avora Brands</title>
+<meta name="description" content="12 case studies: VTIARA Clinic, Sri Veluguvani, CashAlert, Bhakti TV, Picxel AI, Local Service Finder, Swagat Stay and more.">
+<meta property="og:image" content="images/img-bhaktitv.jpg">
 <meta name="theme-color" content="#060A18">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪔</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,22 +15,18 @@
 <body data-page="work" class="dark-top">
 <div data-header></div>
 <main>
-  <section class="page-hero">
-    <div class="stars"></div><div class="rangoli-bg"></div>
-    <div class="container on-dark page-hero-split">
-      <div>
-        <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><span>Work</span></nav>
-        <span class="eyebrow reveal">Case studies</span>
-        <h1 class="h-display mt-24" data-split>Work that<br><span class="serif gold-text">speaks</span> for us.</h1>
-      </div>
-      <div>
-        <p class="lead reveal" style="--d:.3s">FinTech, healthcare, devotional media, publishing and hyperlocal services. Each project starts with the business problem — here's what we did and what changed.</p>
-        <div class="stats mt-32 reveal" style="--d:.4s;grid-template-columns:repeat(3,1fr);border-color:rgba(255,255,255,.1)">
-          <div class="stat" style="padding:20px 0"><b data-count="12">12</b><span>Case studies</span></div>
-          <div class="stat" style="padding:20px 18px;border-color:rgba(255,255,255,.1)"><b data-count="9">9</b><span>Clients</span></div>
-          <div class="stat" style="padding:20px 18px;border-color:rgba(255,255,255,.1)"><b data-count="5">5</b><span>Disciplines</span></div>
+  <section class="page-hero work-hero3" id="spot">
+    <div class="sp-bg" id="spBg" aria-hidden="true"></div>
+    <div class="container on-dark sp-wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><span>Work</span></nav>
+      <div class="sp-main">
+        <div class="sp-copy">
+          <span class="eyebrow">Our work · <span id="spCount"></span></span>
+          <div class="sp-text" id="spText" aria-live="polite"></div>
         </div>
+        <a class="sp-frame" id="spFrame" href="#"><img id="spImg" alt=""></a>
       </div>
+      <div class="sp-rail" id="spRail" role="tablist" aria-label="Featured projects"></div>
     </div>
   </section>
 
@@ -43,7 +39,7 @@
 
   <section class="section" style="padding-top:0">
     <div class="container"><div class="cta-band on-dark" style="grid-template-columns:1fr auto">
-      <div><span class="eyebrow">Your project next?</span><h2 class="h2 mt-16">Let's make something <span class="serif gold-text">worth a case study.</span></h2></div>
+      <div><span class="eyebrow">Your project next?</span><h2 class="h2 mt-16">Let's make something <span class="serif gold-text">worth showing off.</span></h2></div>
       <div class="btn-row"><a class="btn btn--gold" href="contact.html" data-magnetic>Start a project <i data-i="arrow"></i></a></div>
     </div></div>
   </section>
@@ -52,6 +48,36 @@
 <script src="assets/js/data.js"></script>
 <script src="assets/js/site.js"></script>
 <script>
+  /* hero: auto-rotating featured project showcase */
+  (() => {
+    const ids = ['vydehi', 'cashalert-app', 'bhaktitv', 'localservice-web', 'picxel-app', 'veluguvani'];
+    const F = ids.map(id => PROJECTS.find(p => p.id === id)).filter(Boolean);
+    const clients = new Set(PROJECTS.map(p => p.client)).size;
+    document.getElementById('spCount').textContent = `${PROJECTS.length} projects · ${clients} clients`;
+    const rail = document.getElementById('spRail'), bg = document.getElementById('spBg'), img = document.getElementById('spImg'), frame = document.getElementById('spFrame'), text = document.getElementById('spText');
+    rail.innerHTML = F.map((p, i) => `<button role="tab" data-i="${i}" aria-label="${p.client}"><img src="${p.cover}" alt=""><span><b>${p.client}</b><small>${CATS[p.cat]}</small></span><i></i></button>`).join('');
+    let cur = -1, timer;
+    const DUR = 6000;
+    const go = i => {
+      if (i === cur) return; cur = i; const p = F[i];
+      rail.querySelectorAll('button').forEach((b, k) => { b.classList.toggle('on', k === i); b.setAttribute('aria-selected', k === i); });
+      bg.style.backgroundImage = `url('${p.cover}')`;
+      img.classList.remove('in'); text.classList.remove('in');
+      setTimeout(() => {
+        img.src = p.cover; img.alt = `${p.client}: ${p.title}`; frame.href = `case.html?p=${p.id}`;
+        text.innerHTML = `<span class="sp-cat">${CATS[p.cat]} · ${p.year}</span><h1>${p.title}</h1><p>${p.client}. ${p.summary}</p>
+          <div class="btn-row"><a class="btn btn--gold" href="case.html?p=${p.id}">View project <i data-i="arrow"></i></a><a class="btn btn--ghost" href="#grid">All ${PROJECTS.length} projects</a></div>`;
+        if (window.renderIcons) renderIcons(text);
+        img.classList.add('in'); text.classList.add('in');
+      }, 260);
+      clearTimeout(timer); timer = setTimeout(() => go((cur + 1) % F.length), DUR);
+    };
+    rail.addEventListener('click', e => { const b = e.target.closest('button'); if (b) go(+b.dataset.i); });
+    const spot = document.getElementById('spot');
+    spot.addEventListener('mouseenter', () => { clearTimeout(timer); spot.classList.add('paused'); });
+    spot.addEventListener('mouseleave', () => { spot.classList.remove('paused'); clearTimeout(timer); timer = setTimeout(() => go((cur + 1) % F.length), DUR); });
+    go(0);
+  })();
   const grid = document.getElementById('grid'), fl = document.getElementById('filters');
   const start = new URLSearchParams(location.search).get('filter') || 'all';
   fl.innerHTML = [['all', 'All work'], ...Object.entries(CATS)].map(([k, v]) => `<button role="tab" data-f="${k}" class="${k === start ? 'active' : ''}">${v} <span class="muted" style="font-weight:600">${k === 'all' ? PROJECTS.length : PROJECTS.filter(p => p.cat === k).length}</span></button>`).join('');

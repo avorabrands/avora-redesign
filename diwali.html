@@ -6,7 +6,7 @@
 <title>Diwali Gift Hampers & Personalised Gifts — Avora Brands, Bengaluru</title>
 <meta name="description" content="Custom Diwali gift hampers, personalised gifts, festive packaging and greeting cards — branded with your logo and delivered across India. Order on WhatsApp.">
 <meta property="og:title" content="Diwali gifting by Avora Brands">
-<meta property="og:image" content="https://www.avorabrands.in/images/cat-corporate-gifts.jpg">
+<meta property="og:image" content="images/cat-corporate-gifts.jpg">
 <meta name="theme-color" content="#060A18">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪔</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,22 +33,41 @@
   .b-step:first-child{padding-top:0}
   .b-step h3{font-size:18px;display:flex;gap:12px;align-items:center;margin-bottom:16px}
   .b-step h3 span{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--gold);color:var(--navy-950);font-size:14px}
-  .items{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-  @media (max-width:640px){.items{grid-template-columns:repeat(2,1fr)}}
-  .items label{cursor:pointer}
-  .items input{position:absolute;opacity:0}
-  .items .it{display:flex;flex-direction:column;gap:6px;padding:16px;border-radius:16px;border:1.5px solid rgba(255,255,255,.12);background:rgba(255,255,255,.03);transition:.25s;height:100%}
-  .items .it .e{font-size:24px}
-  .items .it b{font-size:14.5px;color:#fff}
-  .items input:checked+.it{border-color:var(--gold);background:rgba(245,185,66,.1);box-shadow:0 0 0 4px rgba(245,185,66,.12)}
-  .items input:focus-visible+.it{outline:2px solid var(--blue-2);outline-offset:2px}
+  .ms{position:relative}
+  .ms-btn{width:100%;min-height:56px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 14px 0 18px;border-radius:16px;border:1.5px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05);color:#fff;font:inherit;font-size:15.5px;font-weight:600;text-align:left;cursor:pointer;transition:border-color .2s,box-shadow .2s}
+  .ms-btn:hover{border-color:rgba(255,255,255,.3)}
+  .ms.open .ms-btn,.ms-btn:focus-visible{outline:0;border-color:var(--gold);box-shadow:0 0 0 4px rgba(245,185,66,.14)}
+  .ms-btn b{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;color:#A9B1C7;transition:transform .3s var(--ease),background .2s,color .2s}
+  .ms-btn b svg{width:15px;height:15px}
+  .ms.open .ms-btn b{transform:rotate(180deg);background:rgba(245,185,66,.16);color:var(--gold)}
+  .ms-val{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .ms-panel{position:absolute;left:0;right:0;top:64px;z-index:30;padding:8px;border-radius:18px;background:#121A35;border:1px solid rgba(255,255,255,.12);box-shadow:0 30px 60px -20px rgba(0,0,0,.7);display:grid;grid-template-columns:1fr 1fr;gap:2px;opacity:0;visibility:hidden;transform:translateY(-6px) scaleY(.96);transform-origin:top center;transition:opacity .2s,transform .25s var(--ease),visibility .25s}
+  .ms.open .ms-panel{opacity:1;visibility:visible;transform:none}
+  .ms-opt{position:relative;display:flex;align-items:center;gap:12px;padding:12px;border-radius:12px;color:#D9DEEA;font-size:14.5px;font-weight:600;cursor:pointer;transition:background .15s}
+  .ms-opt:hover{background:rgba(255,255,255,.06)}
+  .ms-opt input{position:absolute;opacity:0;pointer-events:none}
+  .ms-box{flex:none;width:20px;height:20px;border-radius:6px;border:1.5px solid rgba(255,255,255,.3);display:grid;place-items:center;transition:.2s}
+  .ms-box::after{content:"";width:10px;height:6px;border-left:2.4px solid var(--navy-950);border-bottom:2.4px solid var(--navy-950);transform:rotate(-45deg) translate(1px,-1px) scale(0);transition:transform .2s var(--ease)}
+  .ms-opt input:checked~.ms-box{background:var(--gold);border-color:var(--gold)}
+  .ms-opt input:checked~.ms-box::after{transform:rotate(-45deg) translate(1px,-1px) scale(1)}
+  .ms-opt input:checked~span:last-child{color:#fff}
+  .ms-opt input:focus-visible~.ms-box{outline:2px solid var(--blue-2);outline-offset:2px}
+  .ms-foot{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 6px 4px;margin-top:4px;border-top:1px solid rgba(255,255,255,.08)}
+  .ms-count{font-size:13px;color:#A9B1C7}
+  .ms-done{padding:9px 18px;border-radius:999px;border:0;background:var(--gold);color:var(--navy-950);font:inherit;font-weight:800;font-size:13.5px;cursor:pointer}
+  .ms-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+  .ms-chips:empty{display:none}
+  .ms-chips button{display:inline-flex;align-items:center;gap:8px;padding:7px 8px 7px 14px;border-radius:999px;border:1px solid rgba(245,185,66,.4);background:rgba(245,185,66,.1);color:#FFE7A3;font:inherit;font-size:13px;font-weight:600;cursor:pointer}
+  .ms-chips button i{width:18px;height:18px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.12);font-style:normal;font-size:11px;line-height:1}
+  .ms-chips button:hover i{background:var(--rose);color:#fff}
+  @media (max-width:520px){.ms-panel{grid-template-columns:1fr}}
   .qty{display:flex;align-items:center;gap:18px}
   .qty input[type=range]{flex:1;accent-color:var(--gold)}
   .qty output{min-width:90px;text-align:right;font-size:28px;font-weight:800;color:#fff;font-variant-numeric:tabular-nums}
   .summary{position:sticky;top:110px;border-radius:26px;padding:28px;background:linear-gradient(160deg,#1E1433,#0B1230);border:1px solid rgba(245,185,66,.3);box-shadow:0 30px 80px -30px rgba(255,138,31,.45);color:#fff;overflow:hidden}
-  .summary .box{height:150px;border-radius:18px;margin-bottom:20px;background:radial-gradient(circle at 50% 120%,rgba(255,138,31,.55),transparent 60%),linear-gradient(160deg,#0A1029,#1A2658);display:grid;place-items:center;position:relative;overflow:hidden}
-  .summary .box .gift{font-size:64px;filter:drop-shadow(0 10px 20px rgba(0,0,0,.5));transition:transform .5s var(--ease)}
-  .summary .box.pop .gift{transform:scale(1.15) rotate(-6deg)}
+  .summary .box{height:190px;border-radius:18px;margin-bottom:20px;background:radial-gradient(circle at 50% 120%,rgba(255,138,31,.55),transparent 60%),linear-gradient(160deg,#0A1029,#1A2658);display:grid;place-items:center;position:relative;overflow:hidden}
+  .summary .box .gift-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .3s}.summary .box .gift{font-size:64px;filter:drop-shadow(0 10px 20px rgba(0,0,0,.5));transition:transform .5s var(--ease)}
+  .summary .box.pop .gift{transform:scale(1.08)}
   .summary .box .ribbon{position:absolute;left:0;right:0;top:50%;height:10px;background:linear-gradient(90deg,var(--gold-deep),var(--gold-2),var(--gold-deep));opacity:.35}
   .summary ul{list-style:none;display:grid;gap:8px;margin:14px 0 22px;font-size:14.5px;color:#C9D0E2;min-height:40px}
   .summary li::before{content:"✦ ";color:var(--gold)}
@@ -77,22 +96,68 @@
         <div class="mt-32 reveal" style="--d:.55s"><div class="countdown" data-countdown></div></div>
       </div>
       <div class="dw-collage reveal-scale" style="--d:.2s">
-        <figure class="a"><img src="https://www.avorabrands.in/images/cat-corporate-gifts.jpg" alt="Corporate hamper with diary, bottle, mug and pen"></figure>
-        <figure class="b"><img src="https://www.avorabrands.in/images/disc-photo-gifts.jpg" alt="Personalised photo gifts" loading="lazy"></figure>
-        <figure class="c"><img src="https://www.avorabrands.in/images/cat-packaging.jpg" alt="Custom branded packaging" loading="lazy"></figure>
+        <figure class="a"><img src="images/disc-drinkware.jpg" alt="Navy branded bottles, tumblers and mugs"></figure>
+        <figure class="b"><img src="images/cat-gifts.webp" alt="Personalised photo mug, frame and keychain" loading="lazy"></figure>
+        <figure class="c"><img src="images/pop-packaging.jpg" alt="Branded gift bags and boxes" loading="lazy"></figure>
       </div>
     </div>
     <div class="hero-diyas" data-diyas="7" aria-hidden="true"></div>
   </section>
 
   <!-- who -->
-  <section class="section--tight">
+  <section class="section--tight gift-who">
     <div class="container">
-      <div class="who-row">
-        <div class="who-card reveal"><span class="e">👩‍💼</span><b>HR & People teams</b><p>Employee hampers shipped to office or every home.</p></div>
-        <div class="who-card reveal" style="--d:.06s"><span class="e">🤝</span><b>Founders & sales</b><p>Client gifts that keep your brand on their desk all year.</p></div>
-        <div class="who-card reveal" style="--d:.12s"><span class="e">🏪</span><b>Shops & brands</b><p>Festive boxes, labels and tags for your own customers.</p></div>
-        <div class="who-card reveal" style="--d:.18s"><span class="e">🏡</span><b>Families</b><p>Photo frames, mugs and canvases for the people you love.</p></div>
+      <div class="sec-head"><div><span class="eyebrow reveal">Who are you gifting?</span><h2 class="h2 reveal">One festival. <span class="serif blue-text">Four kinds of thank-you.</span></h2></div>
+        <p class="lead reveal" style="max-width:420px">Pick who it's for and we'll shape the hamper, branding and delivery around them.</p></div>
+      <div class="gp-row reveal">
+        <article class="gp on" tabindex="0">
+          <img src="images/pop-apparel.jpg" alt="Team in matching branded polos" loading="lazy">
+          <div class="gp-in">
+            <span class="gp-n">01</span>
+            <div class="gp-body">
+              <small>For your team</small>
+              <h3>HR & People teams</h3>
+              <div class="gp-more"><p>Thank 10 or 1,000 employees in one go. Hampers packed with your logo and delivered to the address you choose.</p><div class="gp-tags"><span>Bulk from 10</span><span>Delivered to you</span><span>Name cards</span></div>
+              <a class="btn btn--gold btn--sm" href="#builder" data-gift-for="Employees">Gift my team <i data-i="arrow"></i></a></div>
+            </div>
+          </div>
+        </article>
+        <article class="gp" tabindex="0">
+          <img src="images/cat-corporate-gifts.jpg" alt="Premium executive gift set" loading="lazy">
+          <div class="gp-in">
+            <span class="gp-n">02</span>
+            <div class="gp-body">
+              <small>For your clients</small>
+              <h3>Founders & sales</h3>
+              <div class="gp-more"><p>Premium gifts that keep your brand on their desk long after Diwali: diaries, bottles, tech and a personal note.</p><div class="gp-tags"><span>Premium sets</span><span>Engraving</span><span>Handwritten-style notes</span></div>
+              <a class="btn btn--gold btn--sm" href="#builder" data-gift-for="Clients & partners">Gift my clients <i data-i="arrow"></i></a></div>
+            </div>
+          </div>
+        </article>
+        <article class="gp" tabindex="0">
+          <img src="images/cat-packaging.jpg" alt="Branded festive boxes, bags and labels" loading="lazy">
+          <div class="gp-in">
+            <span class="gp-n">03</span>
+            <div class="gp-body">
+              <small>For your customers</small>
+              <h3>Shops & brands</h3>
+              <div class="gp-more"><p>Turn every order into a festive moment with Diwali sleeves, boxes, labels and tags on your regular packaging.</p><div class="gp-tags"><span>Festive sleeves</span><span>Labels & tags</span><span>No new dies</span></div>
+              <a class="btn btn--gold btn--sm" href="#builder" data-gift-for="My customers">Gift my customers <i data-i="arrow"></i></a></div>
+            </div>
+          </div>
+        </article>
+        <article class="gp" tabindex="0">
+          <img src="images/pop-photo-gifts.jpg" alt="Personalised family photo gifts" loading="lazy">
+          <div class="gp-in">
+            <span class="gp-n">04</span>
+            <div class="gp-body">
+              <small>For your loved ones</small>
+              <h3>Families</h3>
+              <div class="gp-more"><p>Photo frames, mugs and canvases with their faces and names on them. Gifts they will keep for years.</p><div class="gp-tags"><span>From 1 piece</span><span>Photo gifts</span><span>Gift wrapped</span></div>
+              <a class="btn btn--gold btn--sm" href="#builder" data-gift-for="Family & friends">Gift my family <i data-i="arrow"></i></a></div>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -123,10 +188,10 @@
         </div>
         <div class="tier reveal" style="--d:.16s">
           <span class="t-name">Executive</span>
-          <h3>The Lakshmi Chest</h3>
+          <h3>The Lakshmi Treasure</h3>
           <p class="t-sub">For leadership, partners and top clients.</p>
-          <ul><li>Wooden or leatherette chest, engraved</li><li>Tech set: wireless charger, speaker</li><li>Leather-finish diary & metal pen</li><li>Dry-fruit selection & brass décor</li><li>Handwritten-style card</li></ul>
-          <a class="btn btn--ghost" href="#" data-wa-link="Hi Avora! I'm interested in the Lakshmi Chest (Executive) hamper. Quantity: ">Get price on WhatsApp</a>
+          <ul><li>Wooden or leatherette box, engraved</li><li>Tech set: wireless charger, speaker</li><li>Leather-finish diary & metal pen</li><li>Dry-fruit selection & brass décor</li><li>Handwritten-style card</li></ul>
+          <a class="btn btn--ghost" href="#" data-wa-link="Hi Avora! I'm interested in the Lakshmi Treasure (Executive) hamper. Quantity: ">Get price on WhatsApp</a>
         </div>
       </div>
       <p class="center muted mt-24 reveal" style="font-size:14px">Contents are indicative and depend on stock. We confirm every item and photo before you pay.</p>
@@ -151,16 +216,10 @@
               <label><input type="radio" name="For" value="Family & friends"><span>Family & friends</span></label>
             </div></div>
           <div class="b-step reveal"><h3><span>2</span>What goes inside?</h3>
-            <div class="items">
-              <label><input type="checkbox" name="Items" value="Mug"><span class="it"><span class="e">☕</span><b>Branded mug</b></span></label>
-              <label><input type="checkbox" name="Items" value="Bottle" checked><span class="it"><span class="e">🧴</span><b>Insulated bottle</b></span></label>
-              <label><input type="checkbox" name="Items" value="Diary & pen" checked><span class="it"><span class="e">📓</span><b>Diary & pen</b></span></label>
-              <label><input type="checkbox" name="Items" value="Diya / candle" checked><span class="it"><span class="e">🪔</span><b>Diya / candle</b></span></label>
-              <label><input type="checkbox" name="Items" value="Sweets / dry fruits"><span class="it"><span class="e">🍬</span><b>Sweets / dry fruits</b></span></label>
-              <label><input type="checkbox" name="Items" value="Photo frame"><span class="it"><span class="e">🖼️</span><b>Photo frame</b></span></label>
-              <label><input type="checkbox" name="Items" value="T-shirt"><span class="it"><span class="e">👕</span><b>Festive T-shirt</b></span></label>
-              <label><input type="checkbox" name="Items" value="Tech gadget"><span class="it"><span class="e">🔌</span><b>Tech gadget</b></span></label>
-              <label><input type="checkbox" name="Items" value="2027 calendar"><span class="it"><span class="e">📅</span><b>2027 calendar</b></span></label>
+            <div class="ms" id="itemsDd">
+              <button type="button" class="ms-btn" aria-haspopup="true" aria-expanded="false" aria-controls="itemsPanel"><span class="ms-val">Choose items</span><b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></b></button>
+              <div class="ms-panel" id="itemsPanel" role="group" aria-label="Hamper items"><label class="ms-opt"><input type="checkbox" name="Items" value="Mug"><span class="ms-box"></span><span>Branded mug</span></label><label class="ms-opt"><input type="checkbox" name="Items" value="Bottle" checked><span class="ms-box"></span><span>Insulated bottle</span></label><label class="ms-opt"><input type="checkbox" name="Items" value="Diary & pen" checked><span class="ms-box"></span><span>Diary & pen</span></label><label class="ms-opt"><input type="checkbox" name="Items" value="Diya / candle" checked><span class="ms-box"></span><span>Diya / candle</span></label><label class="ms-opt"><input type="checkbox" name="Items" value="Sweets / dry fruits"><span class="ms-box"></span><span>Sweets / dry fruits</span></label><label class="ms-opt"><input type="checkbox" name="Items" value="Photo frame"><span class="ms-box"></span><span>Photo frame</span></label><label class="ms-opt"><input type="checkbox" name="Items" value="T-shirt"><span class="ms-box"></span><span>Festive T-shirt</span></label><label class="ms-opt"><input type="checkbox" name="Items" value="Tech gadget"><span class="ms-box"></span><span>Tech gadget</span></label><label class="ms-opt"><input type="checkbox" name="Items" value="2027 calendar"><span class="ms-box"></span><span>2027 calendar</span></label><div class="ms-foot"><span class="ms-count"></span><button type="button" class="ms-done">Done</button></div></div>
+              <div class="ms-chips" aria-live="polite"></div>
             </div></div>
           <div class="b-step reveal"><h3><span>3</span>How many?</h3>
             <div class="qty"><input type="range" min="1" max="500" value="25" name="Quantity" id="qty" aria-label="Quantity"><output for="qty" id="qtyOut">25</output></div></div>
@@ -182,7 +241,7 @@
             </div></div></div>
         </div>
         <aside class="summary reveal-scale" aria-live="polite">
-          <div class="box" id="giftBox"><div class="ribbon"></div><span class="gift">🎁</span></div>
+          <div class="box" id="giftBox"><img class="gift gift-img" src="images/hamper-employees.jpg" alt=""></div>
           <small style="color:var(--gold);font-weight:800;letter-spacing:.12em">YOUR HAMPER</small>
           <h3 class="h3 mt-8" id="sumTitle">For your employees</h3>
           <ul id="sumItems"></ul>
@@ -202,10 +261,10 @@
       <div class="sec-head"><div><span class="eyebrow reveal">Personalised gifts</span><h2 class="h2 reveal">Their photo. Their name. <span class="serif blue-text">Your love.</span></h2></div>
       <a class="btn btn--ghost reveal" href="print.html#gifts">All gift products</a></div>
       <div class="grid g-4">
-        <div class="p-card reveal"><div class="media"><img src="https://www.avorabrands.in/images/pop-photo-gifts.jpg" alt="Photo frames" loading="lazy"><span class="chip chip--gold">Diwali pick</span></div><div class="body"><h3 class="h4">Photo frames</h3><p>Family moments, framed to keep.</p><div class="price"><span class="muted" style="font-size:13px">From 1 piece</span><a class="btn btn--sm btn--ghost" href="#" data-wa-link="Hi Avora! I want a personalised photo frame for Diwali.">Order</a></div></div></div>
-        <div class="p-card reveal" style="--d:.06s"><div class="media"><img src="https://www.avorabrands.in/images/disc-drinkware.jpg" alt="Photo mugs and drinkware" loading="lazy"></div><div class="body"><h3 class="h4">Photo mugs & bottles</h3><p>Names, photos or logos.</p><div class="price"><span class="muted" style="font-size:13px">From 1 piece</span><a class="btn btn--sm btn--ghost" href="#" data-wa-link="Hi Avora! I want personalised mugs/bottles for Diwali.">Order</a></div></div></div>
-        <div class="p-card reveal" style="--d:.12s"><div class="media"><img src="https://www.avorabrands.in/images/cat-gifts.webp" alt="Canvas prints and personalised gifts" loading="lazy"></div><div class="body"><h3 class="h4">Canvas prints</h3><p>Gallery-style art from your photos.</p><div class="price"><span class="muted" style="font-size:13px">Any size</span><a class="btn btn--sm btn--ghost" href="#" data-wa-link="Hi Avora! I want a canvas print for Diwali.">Order</a></div></div></div>
-        <div class="p-card reveal" style="--d:.18s"><div class="media"><img src="https://www.avorabrands.in/images/disc-business-stationery.jpg" alt="Calendars and diaries" loading="lazy"><span class="chip">New year ready</span></div><div class="body"><h3 class="h4">2027 calendars & diaries</h3><p>With your brand on every page.</p><div class="price"><span class="muted" style="font-size:13px">Bulk friendly</span><a class="btn btn--sm btn--ghost" href="#" data-wa-link="Hi Avora! I want branded 2027 calendars/diaries.">Order</a></div></div></div>
+        <div class="p-card reveal"><div class="media"><img src="images/pop-photo-gifts.jpg" alt="Photo frames" loading="lazy"><span class="chip chip--gold">Diwali pick</span></div><div class="body"><h3 class="h4">Photo frames</h3><p>Family moments, framed to keep.</p><div class="price"><span class="muted" style="font-size:13px">From 1 piece</span><a class="btn btn--sm btn--ghost" href="#" data-wa-link="Hi Avora! I want a personalised photo frame for Diwali.">Order</a></div></div></div>
+        <div class="p-card reveal" style="--d:.06s"><div class="media"><img src="images/personalised-gifts.webp" alt="Personalised bottle and mug with names" loading="lazy"></div><div class="body"><h3 class="h4">Photo mugs & bottles</h3><p>Names, photos or logos.</p><div class="price"><span class="muted" style="font-size:13px">From 1 piece</span><a class="btn btn--sm btn--ghost" href="#" data-wa-link="Hi Avora! I want personalised mugs/bottles for Diwali.">Order</a></div></div></div>
+        <div class="p-card reveal" style="--d:.12s"><div class="media"><img src="images/disc-photo-gifts.jpg" alt="Family photo canvas print, cushion, calendar and tote" loading="lazy"></div><div class="body"><h3 class="h4">Canvas prints</h3><p>Gallery-style art from your photos.</p><div class="price"><span class="muted" style="font-size:13px">Any size</span><a class="btn btn--sm btn--ghost" href="#" data-wa-link="Hi Avora! I want a canvas print for Diwali.">Order</a></div></div></div>
+        <div class="p-card reveal" style="--d:.18s"><div class="media"><img src="images/disc-business-stationery.jpg" alt="Branded diaries, notebooks and stationery" loading="lazy"><span class="chip">New year ready</span></div><div class="body"><h3 class="h4">2027 calendars & diaries</h3><p>With your brand on every page.</p><div class="price"><span class="muted" style="font-size:13px">Bulk friendly</span><a class="btn btn--sm btn--ghost" href="#" data-wa-link="Hi Avora! I want branded 2027 calendars/diaries.">Order</a></div></div></div>
       </div>
     </div>
   </section>
@@ -215,9 +274,9 @@
     <div class="container">
       <div class="sec-head"><div><span class="eyebrow reveal">For shops & brands</span><h2 class="h2 reveal">Make your own customers <span class="serif blue-text">feel festive.</span></h2></div></div>
       <div class="bento">
-        <div class="tile tile--img w4 h2r reveal" id="packaging"><img src="https://www.avorabrands.in/images/disc-packaging.jpg" alt="Festive branded packaging" loading="lazy"><span class="chip chip--gold tag">Packaging</span><h3 class="h3">Festive sweet boxes, bags & labels</h3><p>Limited-edition Diwali sleeves on your regular packaging — no new dies needed.</p><a class="tile-cta" href="#" data-wa-link="Hi Avora! I need Diwali packaging for my products.">Get packaging quote <i data-i="arrow"></i></a></div>
-        <div class="tile tile--gold w2 reveal" id="cards"><span style="font-size:32px">💌</span><h3 class="h4 mt-16">Greeting cards & e-cards</h3><p>Printed for clients; animated versions for WhatsApp & Instagram.</p><a class="tile-cta" style="color:#8A5300" href="#" data-wa-link="Hi Avora! I need Diwali greeting cards / e-cards.">Order cards <i data-i="arrow"></i></a></div>
-        <div class="tile tile--navy w2 reveal" id="apparel"><span style="font-size:32px">👕</span><h3 class="h4 mt-16">Festive team tees</h3><p>Matching T-shirts & polos for office celebrations.</p><a class="tile-cta" style="color:var(--gold)" href="#" data-wa-link="Hi Avora! I need festive T-shirts for my team.">Plan team kit <i data-i="arrow"></i></a></div>
+        <div class="tile tile--img w4 h2r reveal" id="packaging"><img src="images/cat-packaging.jpg" alt="Branded packaging: boxes, bags and labels" loading="lazy"><span class="chip chip--gold tag">Packaging</span><h3 class="h3">Festive sweet boxes, bags & labels</h3><p>Limited-edition Diwali sleeves on your regular packaging — no new dies needed.</p><a class="tile-cta" href="#" data-wa-link="Hi Avora! I need Diwali packaging for my products.">Get packaging quote <i data-i="arrow"></i></a></div>
+        <div class="tile tile--img w2 reveal" id="cards"><img src="images/diwali-greeting-cards.jpg" alt="Navy and gold Shubh Deepavali greeting card with envelope and matching phone e-card" loading="lazy"><span class="chip chip--gold tag">Cards</span><h3 class="h4">Greeting cards & e-cards</h3><p>Printed for clients; animated versions for WhatsApp & Instagram.</p><a class="tile-cta" style="color:var(--gold)" href="#" data-wa-link="Hi Avora! I need Diwali greeting cards / e-cards.">Order cards <i data-i="arrow"></i></a></div>
+        <div class="tile tile--img w2 reveal" id="apparel"><img src="images/pop-apparel.jpg" alt="Team wearing matching branded polo T-shirts" loading="lazy"><span class="chip chip--gold tag">Apparel</span><h3 class="h4">Festive team T-shirts</h3><p>Matching T-shirts & polos for office celebrations.</p><a class="tile-cta" href="#" data-wa-link="Hi Avora! I need festive T-shirts for my team.">Plan team kit <i data-i="arrow"></i></a></div>
       </div>
     </div>
   </section>
@@ -230,8 +289,8 @@
         <div class="step"><div class="n" style="--d:.1s">01</div><h4>Tell us the brief</h4><p>Who, how many, budget and date.</p><span class="t">5 minutes</span></div>
         <div class="step"><div class="n" style="--d:.4s">02</div><h4>See options & photos</h4><p>Curated hampers with real product photos.</p><span class="t">Same day</span></div>
         <div class="step"><div class="n" style="--d:.7s">03</div><h4>Approve the mock-up</h4><p>Your logo on box, card and items.</p><span class="t">Before you pay</span></div>
-        <div class="step"><div class="n" style="--d:1s">04</div><h4>We print & pack</h4><p>Quality-checked, gift-wrapped.</p><span class="t">In-house</span></div>
-        <div class="step"><div class="n" style="--d:1.3s">05</div><h4>Delivered</h4><p>To one office or many homes.</p><span class="t">Tracked</span></div>
+        <div class="step"><div class="n" style="--d:1s">04</div><h4>You pay, we print & pack</h4><p>Once payment is confirmed, we print, quality-check and gift-wrap in-house.</p><span class="t">After you pay</span></div>
+        <div class="step"><div class="n" style="--d:1.3s">05</div><h4>Delivered</h4><p>Straight to the address you give us.</p><span class="t">Tracked</span></div>
       </div>
     </div>
   </section>
@@ -245,7 +304,7 @@
       <div class="faq reveal">
         <details open><summary>Is there a minimum order?<span class="pm">+</span></summary><div class="ans">Personalised gifts start from a single piece. Branded hampers work best from 10 units; bigger orders get better per-unit pricing.</div></details>
         <details><summary>Can you deliver before Diwali?<span class="pm">+</span></summary><div class="ans">Tell us your date when you message — we confirm a delivery date in writing before you pay. If it's too tight, we'll say so honestly and suggest ready-stock options.</div></details>
-        <details><summary>Can you ship to each employee's home?<span class="pm">+</span></summary><div class="ans">Yes. Share a sheet of names and addresses; we pack, label and ship each one, and send you tracking.</div></details>
+        <details><summary>Where do you deliver?<span class="pm">+</span></summary><div class="ans">We deliver every order to the one address you share with us, your office, warehouse or home, and send you tracking so you know exactly when it arrives.</div></details>
         <details><summary>Will I see the hamper before it ships?<span class="pm">+</span></summary><div class="ans">Always. You approve a digital mock-up of the branding, and we share photos of the final packed hamper.</div></details>
         <details><summary>Can I mix items from different hampers?<span class="pm">+</span></summary><div class="ans">Of course — use the <a href="#builder">hamper builder</a> or tell us your budget per hamper and we'll curate.</div></details>
       </div>
@@ -268,6 +327,27 @@
 <script src="assets/js/site.js"></script>
 <script>
   /* live hamper summary */
+  /* step 2: multi-select dropdown for hamper items */
+  (() => {
+    const dd = document.getElementById('itemsDd'); if (!dd) return;
+    const btn = dd.querySelector('.ms-btn'), val = dd.querySelector('.ms-val'), chips = dd.querySelector('.ms-chips'), count = dd.querySelector('.ms-count');
+    const boxes = [...dd.querySelectorAll('input[name="Items"]')];
+    const label = cb => cb.parentElement.querySelector('span:last-child').textContent;
+    const sync = () => {
+      const on = boxes.filter(b => b.checked);
+      val.textContent = on.length ? `${on.length} item${on.length > 1 ? 's' : ''} selected` : 'Choose items';
+      count.textContent = `${on.length} of ${boxes.length} selected`;
+      chips.innerHTML = on.map(b => `<button type="button" data-v="${b.value}" aria-label="Remove ${label(b)}">${label(b)}<i>✕</i></button>`).join('');
+    };
+    const setOpen = o => { dd.classList.toggle('open', o); btn.setAttribute('aria-expanded', o); };
+    btn.addEventListener('click', () => setOpen(!dd.classList.contains('open')));
+    dd.querySelector('.ms-done').addEventListener('click', () => { setOpen(false); btn.focus(); });
+    dd.addEventListener('change', sync);
+    chips.addEventListener('click', e => { const c = e.target.closest('button'); if (!c) return; const b = boxes.find(x => x.value === c.dataset.v); b.checked = false; b.dispatchEvent(new Event('input', { bubbles: true })); sync(); });
+    document.addEventListener('click', e => { if (!dd.contains(e.target)) setOpen(false); });
+    dd.addEventListener('keydown', e => { if (e.key === 'Escape' && dd.classList.contains('open')) { setOpen(false); btn.focus(); } });
+    sync();
+  })();
   (() => {
     const f = document.getElementById('hamperForm'); if (!f) return;
     const out = document.getElementById('qtyOut'), box = document.getElementById('giftBox');
@@ -279,9 +359,32 @@
       document.getElementById('sumItems').innerHTML = items.length ? items.map(i => `<li>${i}</li>`).join('') : '<li>Pick a few items</li>';
       document.getElementById('sumQty').textContent = (q === 500 ? '500+' : q) + (q === 1 ? ' hamper' : ' hampers');
       document.getElementById('sumBrand').textContent = fd.get('Branding');
+      /* preview photo follows "Who is it for?" */
+      /* preview photo follows "Who is it for?" */
+      const pic = { 'Employees': 'hamper-employees.jpg', 'Clients & partners': 'hamper-clients.jpg', 'My customers': 'hamper-customers.jpg', 'Family & friends': 'hamper-family.jpg' }[fd.get('For')] || 'hamper-employees.jpg';
+      const gi = box.querySelector('.gift-img');
+      if (gi && !gi.src.endsWith(pic)) { gi.style.opacity = 0; setTimeout(() => { gi.src = `images/${pic}`; gi.onload = () => gi.style.opacity = 1; }, 200); }
       box.classList.add('pop'); clearTimeout(box._t); box._t = setTimeout(() => box.classList.remove('pop'), 300);
     };
     f.addEventListener('input', upd); upd();
+  })();
+</script>
+<script>
+  /* who-are-you-gifting panels */
+  (() => {
+    const row = document.querySelector('.gp-row'); if (!row) return;
+    const ps = [...row.querySelectorAll('.gp')];
+    const open = el => ps.forEach(p => p.classList.toggle('on', p === el));
+    ps.forEach(p => {
+      p.addEventListener('mouseenter', () => matchMedia('(hover:hover)').matches && open(p));
+      p.addEventListener('click', () => open(p));
+      p.addEventListener('focus', () => open(p));
+      p.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(p); } });
+    });
+    row.querySelectorAll('[data-gift-for]').forEach(b => b.addEventListener('click', () => {
+      const r = document.querySelector(`#hamperForm input[name="For"][value="${b.dataset.giftFor}"]`);
+      if (r) { r.checked = true; r.dispatchEvent(new Event('input', { bubbles: true })); }
+    }));
   })();
 </script>
 </body>

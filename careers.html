@@ -3,13 +3,150 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Careers at Avora Brands — Design Jobs & Internships in Bengaluru</title>
-<meta name="description" content="Join Avora Brands in Bengaluru: UI/UX, graphic, social media and brand roles, plus paid design internships.">
+<title>Careers at Avora Brands — Remote Internships</title>
+<meta name="description" content="Paid, fully remote internships at Avora Brands: graphic design, UI/UX, social media, video editing, brand identity and more. Work on real client projects from anywhere in India.">
 <meta name="theme-color" content="#060A18">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪔</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/site.css">
+<style>
+  /* internship programme */
+  .ins-prog{position:relative;overflow:hidden;padding-bottom:0}
+  .ip-glow{position:absolute;width:620px;height:620px;right:-160px;top:-200px;border-radius:50%;background:radial-gradient(circle,rgba(245,185,66,.18),transparent 65%);animation:ipFloat 9s ease-in-out infinite alternate;pointer-events:none}
+  @keyframes ipFloat{to{transform:translate(-120px,80px)}}
+  .ip-head{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:end}
+  .ip-head .lead{color:#A9B1C7}
+  .ij{list-style:none;position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:64px;padding:0}
+  .ij-line{position:absolute;left:26px;right:26px;top:26px;height:2px;background:rgba(255,255,255,.1);border-radius:2px}
+  .ij-line i{position:absolute;inset:0;transform-origin:left;transform:scaleX(0);background:linear-gradient(90deg,var(--gold),var(--marigold));transition:transform 2.4s var(--ease) .2s}
+  .ij.in .ij-line i{transform:scaleX(1)}
+  .ij-step{position:relative;opacity:.25;transform:translateY(16px);transition:opacity .6s,transform .6s var(--ease);transition-delay:calc(.35s + var(--i)*.55s)}
+  .ij.in .ij-step{opacity:1;transform:none}
+  .ij-dot{position:relative;z-index:1;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:var(--navy-950);border:2px solid rgba(255,255,255,.15);transition:border-color .4s,box-shadow .4s;transition-delay:calc(.35s + var(--i)*.55s)}
+  .ij-dot b{font-size:18px;color:#fff}
+  .ij.in .ij-dot{border-color:var(--gold);box-shadow:0 0 0 6px rgba(245,185,66,.12),0 0 28px rgba(245,185,66,.35)}
+  .ij-step small{display:block;margin-top:22px;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+  .ij-step h3{font-size:20px;font-weight:800;margin-top:6px;color:#fff}
+  .ij-step p{color:#9EA7BE;font-size:14.5px;margin-top:6px}
+  .ip-perks{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:56px}
+  .ip{display:flex;gap:14px;align-items:center;padding:18px;border-radius:20px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);transition:transform .4s var(--ease),border-color .3s}
+  .ip:hover{transform:translateY(-4px);border-color:rgba(245,185,66,.4)}
+  .ip-ic{flex:none;width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:rgba(245,185,66,.14);color:var(--gold)}
+  .ip-ic svg{width:24px;height:24px}
+  .ip b{display:block;color:#fff;font-size:16px}
+  .ip small{color:#9EA7BE;font-size:13.5px}
+  .ip-marq{margin-top:64px;padding:22px 0;border-top:1px solid rgba(255,255,255,.08);overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+  .ip-track{display:flex;gap:12px;width:max-content;animation:ipMarq 32s linear infinite}
+  .ip-marq:hover .ip-track{animation-play-state:paused}
+  .ip-track span{padding:10px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.14);color:#D9DEEA;font-weight:600;font-size:14px;white-space:nowrap}
+  .ip-track span:nth-child(3n+1){border-color:rgba(245,185,66,.45);color:var(--gold)}
+  @keyframes ipMarq{to{transform:translateX(calc(-50% - 6px))}}
+  @media (max-width:900px){
+    .ip-head{grid-template-columns:1fr;gap:16px}
+    .ij{grid-template-columns:1fr;gap:28px;margin-top:44px;padding-left:0}
+    .ij-line{left:26px;right:auto;top:26px;bottom:26px;width:2px;height:auto}
+    .ij-line i{transform-origin:top;transform:scaleY(0)}
+    .ij.in .ij-line i{transform:scaleY(1)}
+    .ij-step{padding-left:76px;min-height:54px}
+    .ij-dot{position:absolute;left:0;top:0}
+    .ij-step small{margin-top:4px}
+    .ip-perks{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:560px){.ip-perks{grid-template-columns:1fr}}
+  @media (prefers-reduced-motion:reduce){.ip-glow,.ip-track{animation:none}}
+
+  /* apply */
+  .ap-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:28px;align-items:stretch}
+  .ap-side{position:relative;overflow:hidden;border-radius:28px;padding:44px;background:var(--navy-950);color:#fff;display:flex;flex-direction:column}
+  .ap-side::after{content:"";position:absolute;left:-120px;bottom:-140px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(47,111,214,.35),transparent 70%);pointer-events:none}
+  .ap-side .h2{font-size:clamp(28px,2.8vw,38px)}
+  .ap-lead{color:#A9B1C7;margin-top:14px}
+  .ap-steps{list-style:none;padding:0;margin:30px 0;display:grid;gap:4px;position:relative}
+  .ap-steps li{display:flex;gap:16px;align-items:center;padding:12px 0;position:relative}
+  .ap-steps li:not(:last-child)::after{content:"";position:absolute;left:19px;top:52px;height:20px;width:2px;background:rgba(255,255,255,.12)}
+  .ap-steps span{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-weight:800;color:var(--navy-950);background:var(--gold)}
+  .ap-steps li:nth-child(n+2) span{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.16)}
+  .ap-steps b{display:block;font-size:16px}
+  .ap-steps small{color:#9EA7BE;font-size:13.5px}
+  .ap-mail{margin-top:auto;display:flex;align-items:center;gap:14px;padding:16px;border-radius:18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);position:relative;z-index:1;transition:border-color .3s}
+  .ap-mail:hover{border-color:var(--gold)}
+  .ap-mail>span{flex:none;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:rgba(245,185,66,.14);color:var(--gold)}
+  .ap-mail svg{width:22px;height:22px}
+  .ap-mail small{display:block;color:#9EA7BE;font-size:12.5px}
+  .ap-mail b{font-size:15px;word-break:break-all}
+  .ap-form{background:#fff;border:1px solid var(--line);border-radius:28px;padding:40px;display:grid;gap:22px;box-shadow:0 30px 60px -45px rgba(10,16,41,.4)}
+  .ap-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .ap-f{display:flex;flex-direction:column;gap:8px;border:0;padding:0;margin:0;min-width:0}
+  .ap-f label,.ap-f legend{font-size:13.5px;font-weight:700;color:var(--ink-2);padding:0}
+  .ap-f legend{margin-bottom:10px}
+  .ap-f .req{color:var(--rose)}
+  .ap-f input:not([type=radio]),.ap-f textarea{width:100%;min-width:0;border:0;border-bottom:1.5px solid var(--line);border-radius:0;background:transparent;padding:10px 2px;font:inherit;font-size:16px;color:var(--ink);transition:border-color .25s}
+  .ap-f textarea{resize:vertical;min-height:96px}
+  .ap-f input:focus,.ap-f textarea:focus{outline:0;border-color:var(--blue)}
+  .ap-f input::placeholder,.ap-f textarea::placeholder{color:#A3AABB}
+  .ap-pills{display:flex;flex-wrap:wrap;gap:8px}
+  .ap-pills label{position:relative;cursor:pointer}
+  .ap-pills input{position:absolute;opacity:0;width:1px;height:1px}
+  .ap-pills span{display:inline-flex;align-items:center;padding:10px 16px;border-radius:999px;border:1.5px solid var(--line);font-weight:600;font-size:14px;color:var(--ink-2);background:#fff;transition:.2s}
+  .ap-pills label:hover span{border-color:var(--ink)}
+  .ap-pills input:checked+span{background:var(--navy-950);color:#fff;border-color:var(--navy-950)}
+  .ap-pills input:focus-visible+span{outline:2px solid var(--blue);outline-offset:2px}
+  .ap-send{justify-self:stretch;width:100%;justify-content:center;padding:15px 22px;font-size:15.5px}
+  .cr-title{font-size:clamp(36px,4.6vw,64px);line-height:1.04}
+  .cr-facts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:28px}
+  .cr-facts div{padding:14px;border-radius:16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1)}
+  .cr-facts b{display:block;font-size:22px;font-weight:800;color:var(--gold);letter-spacing:-.02em}
+  .cr-facts span{display:block;font-size:12.5px;color:#A9B1C7;line-height:1.35;margin-top:2px}
+  @media (max-width:900px){.cr-facts{grid-template-columns:1fr 1fr}}
+  .ap-send{gap:8px}
+  .ap-send[disabled]{opacity:.7;cursor:wait}
+  .ap-f.bad input,.ap-f.bad textarea{border-color:var(--rose)}
+  .ap-f.bad .ap-pills span{border-color:rgba(226,71,91,.5)}
+  .ap-msg{display:none;padding:14px 16px;border-radius:14px;font-weight:600;font-size:14.5px}
+  .ap-msg.ok{display:block;background:rgba(46,204,113,.12);color:#1B7F45}
+  .ap-msg.err{display:block;background:rgba(226,71,91,.1);color:#B4283D}
+  .ap-msg a{text-decoration:underline}
+
+  @media (max-width:960px){.ap-grid{grid-template-columns:1fr}}
+  @media (max-width:560px){.ap-side,.ap-form{padding:26px;border-radius:24px}.ap-row{grid-template-columns:1fr}.ap-send{justify-self:stretch;justify-content:center}}
+  .lf-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:300px 300px 280px;gap:18px}
+  .lf{position:relative;border-radius:26px;overflow:hidden;color:#fff;isolation:isolate;background:var(--navy-950)}
+  .lf img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;transition:transform 1.2s var(--ease)}
+  .lf::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(6,10,24,0) 35%,rgba(6,10,24,.55) 62%,rgba(6,10,24,.92))}
+  .lf:hover img{transform:scale(1.06)}
+  .lf-tx{position:absolute;left:0;right:0;bottom:0;padding:26px;z-index:2}
+  .lf-n{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--gold);margin-bottom:8px}
+  .lf h3{font-size:22px;font-weight:800;letter-spacing:-.01em;line-height:1.2}
+  .lf p{color:rgba(255,255,255,.78);font-size:14.5px;margin-top:6px;max-width:440px}
+  .lf-a{grid-column:1/3;grid-row:1/3}
+  .lf-a h3{font-size:clamp(26px,2.6vw,36px)}.lf-a p{font-size:16px}.lf-a .lf-tx{padding:34px}
+  .lf-b{grid-column:3/5;grid-row:1}
+  .lf-c{grid-column:3;grid-row:2}
+  .lf-d{grid-column:4;grid-row:2}
+  .lf-e{grid-column:1/5;grid-row:3}
+  .lf-e::after{background:linear-gradient(90deg,rgba(6,10,24,.92),rgba(6,10,24,.6) 40%,rgba(6,10,24,0) 70%)}
+  .lf-e .lf-tx{top:0;right:auto;width:min(460px,60%);display:flex;flex-direction:column;justify-content:center;padding:36px}
+  .lf-e h3{font-size:clamp(24px,2.4vw,32px)}
+  .lf-badge{position:absolute;z-index:2;left:22px;top:22px;display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;font-size:12.5px;font-weight:800;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+  .lf-badge i{width:8px;height:8px;border-radius:50%;background:#3DDC84;box-shadow:0 0 0 4px rgba(61,220,132,.25)}
+  @media (max-width:900px){
+    .lf-grid{grid-template-columns:1fr 1fr;grid-template-rows:none;grid-auto-rows:auto}
+    .lf{min-height:240px}
+    .lf-a{grid-column:1/3;grid-row:auto;min-height:420px}
+    .lf-b{grid-column:1/3;grid-row:auto}
+    .lf-c,.lf-d{grid-column:auto;grid-row:auto}
+    .lf-e{grid-column:1/3;grid-row:auto;min-height:300px}
+    .lf-e::after{background:linear-gradient(180deg,rgba(6,10,24,0) 30%,rgba(6,10,24,.92))}
+    .lf-e .lf-tx{top:auto;width:auto;padding:26px}
+  }
+  @media (max-width:560px){
+    .lf-grid{grid-template-columns:1fr;gap:14px}
+    .lf-a,.lf-b,.lf-c,.lf-d,.lf-e{grid-column:1}
+    .lf-a{min-height:380px}.lf{min-height:260px}
+    .lf-tx,.lf-a .lf-tx{padding:22px}
+  }
+</style>
 </head>
 <body data-page="careers" class="dark-top">
 <div data-header></div>
@@ -19,77 +156,86 @@
     <div class="container on-dark page-hero-split">
       <div>
         <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><span>Careers</span></nav>
-        <span class="chip reveal"><span class="dot"></span> Hiring in Bengaluru</span>
-        <h1 class="h-display mt-24" data-split>Do the best work<br>of your <span class="serif gold-text">life.</span></h1>
+        <span class="chip reveal"><span class="dot"></span> Remote internships open</span>
+        <h1 class="h-display cr-title mt-24" data-split>Start your career<br>on <span class="serif gold-text">real client work.</span></h1>
       </div>
       <div>
-        <p class="lead reveal" style="--d:.3s">Real clients from day one — FinTech apps, Telugu magazines, healthcare brands and Diwali campaigns. Small team, big ownership, lots of learning.</p>
-        <div class="btn-row reveal" style="--d:.4s"><a class="btn btn--gold" href="#roles">See open roles <i data-i="arrow"></i></a><a class="btn btn--ghost" href="#internship">Internships</a></div>
+        <p class="lead reveal" style="--d:.3s">Paid, fully remote internships on real client work: FinTech apps, Telugu magazines, healthcare brands, Diwali campaigns and more. Work from anywhere in India.</p>
+        <div class="btn-row reveal" style="--d:.4s"><a class="btn btn--gold" href="#roles">See internships <i data-i="arrow"></i></a><a class="btn btn--ghost" href="#internship">How it works</a></div>
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section life">
     <div class="container">
-      <div class="sec-head"><div><span class="eyebrow reveal">Life at Avora</span><h2 class="h2 reveal">Why designers <span class="serif blue-text">grow fast here.</span></h2></div></div>
-      <div class="bento">
-        <div class="tile tile--navy w3 spotlight reveal"><span style="font-size:30px">🚀</span><h3 class="h3 mt-16">Real projects, day one</h3><p>No dummy briefs. Your work ships to real businesses and real customers.</p></div>
-        <div class="tile spotlight reveal w3" style="--d:.06s"><span style="font-size:30px">🎨</span><h3 class="h3 mt-16">Creative freedom</h3><p>Bold ideas welcome. We experiment, test and push boundaries.</p></div>
-        <div class="tile spotlight reveal" style="--d:.1s"><span style="font-size:30px">🧭</span><h3 class="h4 mt-16">Mentorship</h3><p>Learn directly from the founders.</p></div>
-        <div class="tile spotlight reveal" style="--d:.14s"><span style="font-size:30px">🌏</span><h3 class="h4 mt-16">Diverse industries</h3><p>FinTech to devotional media.</p></div>
-        <div class="tile spotlight reveal" style="--d:.18s"><span style="font-size:30px">🤝</span><h3 class="h4 mt-16">No politics</h3><p>A tight team that wins together.</p></div>
+      <div class="sec-head"><div><span class="eyebrow reveal">Life at Avora</span><h2 class="h2 reveal">Why you’ll <span class="serif blue-text">grow fast here.</span></h2></div>
+        <p class="lead reveal" style="max-width:400px">Not a course and not busywork. This is what your remote internship here actually looks like.</p></div>
+      <div class="lf-grid">
+        <article class="lf lf-a reveal" style="--d:0.00s"><img src="images/life-real.jpg" alt="" loading="lazy"><span class="lf-badge"><i></i>Shipped, not shelved</span>
+          <div class="lf-tx"><span class="lf-n">01</span><h3>Real projects, day one</h3><p>No dummy briefs. What you design gets printed, launched and used by real businesses and their customers.</p></div></article>
+        <article class="lf lf-b reveal" style="--d:0.06s"><img src="images/life-freedom.jpg" alt="" loading="lazy">
+          <div class="lf-tx"><span class="lf-n">02</span><h3>Creative freedom</h3><p>Bold ideas are welcome. We sketch, test and push until it feels right.</p></div></article>
+        <article class="lf lf-c reveal" style="--d:0.12s"><img src="images/life-mentor.jpg" alt="" loading="lazy">
+          <div class="lf-tx"><span class="lf-n">03</span><h3>Founder feedback</h3><p>Every design you make is reviewed by our founders on a call, with clear notes on what to fix and why.</p></div></article>
+        <article class="lf lf-d reveal" style="--d:0.18s"><img src="images/life-industries.jpg" alt="" loading="lazy">
+          <div class="lf-tx"><span class="lf-n">04</span><h3>Diverse industries</h3><p>FinTech, devotional media, healthcare, education, Diwali gifting and more.</p></div></article>
+        <article class="lf lf-e reveal" style="--d:0.24s"><img src="images/life-team.jpg" alt="" loading="lazy">
+          <div class="lf-tx"><span class="lf-n">05</span><h3>Your name on your work</h3><p>When your design goes live, you get the credit. Do well and you leave with a strong reference from the founders.</p></div></article>
       </div>
     </div>
   </section>
 
   <section class="section section--white" id="roles">
     <div class="container">
-      <div class="sec-head"><div><span class="eyebrow reveal">Open roles</span><h2 class="h2 reveal">Find your <span class="serif blue-text">seat.</span></h2><p class="lead reveal">All roles are based in Bengaluru (HSR Layout) with hybrid options. Don't see a fit? Send us your portfolio anyway.</p></div></div>
+      <div class="sec-head"><div><span class="eyebrow reveal">Open internships</span><h2 class="h2 reveal">Find your <span class="serif blue-text">seat.</span></h2><p class="lead reveal">Every internship is 100% remote. We are not hiring for full-time roles right now. Don't see your skill? Send us your portfolio anyway.</p></div></div>
       <div class="grid" id="jobs" style="gap:12px"></div>
     </div>
   </section>
 
-  <section class="section section--dark" id="internship">
-    <div class="container page-hero-split" style="align-items:center">
-      <div>
-        <span class="eyebrow reveal">Internship programme</span>
-        <h2 class="h2 mt-16 reveal">Students: build a portfolio <span class="serif gold-text">you're proud of.</span></h2>
-        <p class="lead mt-16 reveal">2–3 months of hands-on work with real clients, mentorship from experienced designers, and a stipend.</p>
-        <div class="flex wrap gap-12 mt-24 reveal"><span class="chip">Graphic design</span><span class="chip">UI/UX</span><span class="chip">Social media</span><span class="chip">Video editing</span><span class="chip">Brand identity</span><span class="chip">Print design</span></div>
+  <section class="section section--dark ins-prog" id="internship">
+    <div class="ip-glow" aria-hidden="true"></div>
+    <div class="container">
+      <div class="ip-head">
+        <div><span class="eyebrow reveal">Internship programme</span>
+          <h2 class="h2 mt-16 reveal">Students: build a portfolio <span class="serif gold-text">you're proud of.</span></h2></div>
+        <p class="lead reveal">2–3 months of remote, hands-on work with real clients, founder feedback on every project, and a stipend based on your performance.</p>
       </div>
-      <div class="grid g-2 reveal">
-        <div class="card"><div class="ic gold">⏱</div><h3 class="h4">2–3 months</h3><p>Flexible start dates</p></div>
-        <div class="card"><div class="ic gold">₹</div><h3 class="h4">Stipend provided</h3><p>Paid, real work</p></div>
-      </div>
+      <ol class="ij reveal" aria-label="How the internship works"><span class="ij-line" aria-hidden="true"><i></i></span><li class="ij-step" style="--i:0"><span class="ij-dot"><b>1</b></span><small>Day 1</small><h3>Welcome call</h3><p>Meet the founders online, get your tools and your first real brief.</p></li><li class="ij-step" style="--i:1"><span class="ij-dot"><b>2</b></span><small>Weeks 1–4</small><h3>Live client tasks</h3><p>Work on real projects with a founder review on every round.</p></li><li class="ij-step" style="--i:2"><span class="ij-dot"><b>3</b></span><small>Weeks 5–8</small><h3>Own a project</h3><p>Take one brief from first idea to final file, start to finish.</p></li><li class="ij-step" style="--i:3"><span class="ij-dot"><b>4</b></span><small>Final week</small><h3>Portfolio + reference</h3><p>We help you package your work, and the best interns get a reference.</p></li></ol>
+      <div class="ip-perks reveal"><div class="ip" style="--i:0"><span class="ip-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><b>2–3 months</b><small>Flexible start dates</small></div></div><div class="ip" style="--i:1"><span class="ip-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h12M6 9h12M14 20 7 13h2a4.5 4.5 0 0 0 0-9"/></svg></span><div><b>Stipend</b><small>Paid based on performance</small></div></div><div class="ip" style="--i:2"><span class="ip-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span><div><b>100% remote</b><small>Work from anywhere in India</small></div></div><div class="ip" style="--i:3"><span class="ip-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="m9 13 2 2 4-4"/></svg></span><div><b>Portfolio-ready</b><small>Live work you can show</small></div></div></div>
     </div>
+    <div class="ip-marq" aria-label="Areas you can work in"><div class="ip-track"><span>Graphic design</span><span>UI/UX</span><span>Social media</span><span>Video editing</span><span>Brand identity</span><span>Print design</span><span>Packaging</span><span>Motion graphics</span><span>Illustration</span><span>Presentation design</span><span>Graphic design</span><span>UI/UX</span><span>Social media</span><span>Video editing</span><span>Brand identity</span><span>Print design</span><span>Packaging</span><span>Motion graphics</span><span>Illustration</span><span>Presentation design</span></div></div>
   </section>
 
-  <section class="section" id="apply">
-    <div class="container contact-grid">
-      <div class="panel reveal">
+  <section class="section ap" id="apply">
+    <div class="container ap-grid">
+      <aside class="ap-side reveal">
         <span class="eyebrow">Apply</span>
-        <h2 class="h3 mt-8">Tell us about you</h2>
-        <p class="muted mt-8">Your application opens in WhatsApp with everything filled in — attach your resume or portfolio there.</p>
-        <form class="form mt-24" data-wa="Job application from avorabrands.in">
-          <div class="row2">
-            <div class="field"><label for="a-name">Full name <span class="req">*</span></label><input class="input" id="a-name" name="Name" required autocomplete="name"></div>
-            <div class="field"><label for="a-phone">Phone <span class="req">*</span></label><input class="input" id="a-phone" name="Phone" type="tel" required autocomplete="tel"></div>
-          </div>
-          <div class="row2">
-            <div class="field"><label for="a-role">Role <span class="req">*</span></label><select class="select input" id="a-role" name="Role" required><option value="">Select a role</option></select></div>
-            <div class="field"><label for="a-exp">Experience</label><select class="select input" id="a-exp" name="Experience"><option>Student / fresher</option><option>Under 1 year</option><option>1–3 years</option><option>3+ years</option></select></div>
-          </div>
-          <div class="field"><label for="a-port">Portfolio link <span class="req">*</span></label><input class="input" id="a-port" name="Portfolio" type="url" required placeholder="Behance, Dribbble, Drive or website"></div>
-          <div class="field"><label for="a-msg">Why Avora?</label><textarea class="textarea" id="a-msg" name="Note" placeholder="A few lines about you and the work you love"></textarea></div>
-          <button class="btn btn--blue" type="submit">Send application <i data-i="arrow"></i></button>
-          <div class="form-ok">WhatsApp is opening — attach your resume and hit send. Good luck! 🍀</div>
-        </form>
-      </div>
-      <div class="grid" style="gap:14px">
-        <div class="info-card reveal"><span class="ic">📮</span><span><b>Prefer email?</b><small>Send your CV & portfolio to <a href="mailto:hello.avorabrands@gmail.com?subject=Job%20application">hello.avorabrands@gmail.com</a></small></span></div>
-        <div class="info-card reveal"><span class="ic">⏳</span><span><b>What happens next</b><small>We review every application and reply within 3 business days.</small></span></div>
-        <div class="info-card reveal"><span class="ic">🧪</span><span><b>Hybrid work</b><small>Studio in HSR Layout, Bengaluru, with flexible remote days.</small></span></div>
-      </div>
+        <h2 class="h2 mt-16">Your first brief is <span class="serif gold-text">one message away.</span></h2>
+        <p class="ap-lead">Fill the form and your application goes straight to our inbox. You will get a confirmation email, and we reply within 2 days.</p>
+        <ol class="ap-steps">
+          <li><span>1</span><div><b>Send your application</b><small>Takes about 2 minutes</small></div></li>
+          <li><span>2</span><div><b>We review your work</b><small>Reply within 2 days</small></div></li>
+          <li><span>3</span><div><b>Short video call</b><small>Meet the founders</small></div></li>
+          <li><span>4</span><div><b>Start remotely</b><small>From anywhere in India</small></div></li>
+        </ol>
+        <a class="ap-mail" href="mailto:hello.avorabrands@gmail.com?subject=Internship%20application"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="3"/><path d="m3 7 9 6.5L21 7"/></svg></span><div><small>Prefer email?</small><b>hello.avorabrands@gmail.com</b></div></a>
+      </aside>
+      <form class="ap-form reveal" id="applyForm" novalidate style="--d:.1s">
+        <div class="ap-row">
+          <div class="ap-f"><label for="a-name">Full name <span class="req">*</span></label><input id="a-name" name="Name" required autocomplete="name" placeholder="Your name"></div>
+          <div class="ap-f"><label for="a-phone">Phone <span class="req">*</span></label><input id="a-phone" name="Phone" type="tel" required autocomplete="tel" placeholder="+91"></div>
+        </div>
+        <fieldset class="ap-f"><legend>Internship <span class="req">*</span></legend><div class="ap-pills" id="a-role"></div></fieldset>
+        <fieldset class="ap-f"><legend>You are</legend><div class="ap-pills">
+          <label><input type="radio" name="Status" value="Student" checked><span>Student</span></label>
+          <label><input type="radio" name="Status" value="Recent graduate"><span>Recent graduate</span></label>
+          <label><input type="radio" name="Status" value="Career switcher"><span>Career switcher</span></label></div></fieldset>
+        <div class="ap-f"><label for="a-email">Email <span class="req">*</span></label><input id="a-email" name="email" type="email" required autocomplete="email" placeholder="you@example.com"></div>
+        <div class="ap-f"><label for="a-port">Portfolio or resume link <span class="req">*</span></label><input id="a-port" name="Portfolio" type="url" required placeholder="Behance, Dribbble, Google Drive or website"></div>
+        <div class="ap-f"><label for="a-msg">Why Avora?</label><textarea id="a-msg" name="Note" rows="4" placeholder="A few lines about you and the work you love"></textarea></div>
+        <button class="btn btn--gold ap-send" type="submit"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="3"/><path d="m3 7 9 6.5L21 7"/></svg> <span>Send application</span></button>
+        <div class="ap-msg" role="status" aria-live="polite"></div>
+      </form>
     </div>
   </section>
 </main>
@@ -97,11 +243,46 @@
 <script src="assets/js/data.js"></script>
 <script>
   document.getElementById('jobs').innerHTML = JOBS.map((j, i) => `<a class="job reveal" style="--d:${i * .04}s" href="#apply" data-role="${j.title}">
-    <div><h3>${j.title}</h3><small>Full-time</small></div><small>📍 ${j.where}</small><div class="tags"><span class="chip">${j.exp}</span><span class="chip">${j.tools}</span></div>
+    <div><h3>${j.title}</h3><small>Internship · ${j.dur}</small></div><small>${j.where}</small><div class="tags"><span class="chip">${j.exp}</span><span class="chip">${j.tools}</span></div>
     <span class="btn btn--sm btn--ghost">Apply <i data-i="arrow"></i></span></a>`).join('');
-  const sel = document.getElementById('a-role');
-  sel.insertAdjacentHTML('beforeend', [...JOBS.map(j => j.title), 'Internship – Graphic Design', 'Internship – UI/UX', 'Internship – Social Media', 'Internship – Video Editing', 'Other'].map(r => `<option>${r}</option>`).join(''));
-  document.getElementById('jobs').addEventListener('click', e => { const a = e.target.closest('[data-role]'); if (a) sel.value = a.dataset.role; });
+  const roles = document.getElementById('a-role');
+  roles.innerHTML = [...JOBS.map(j => j.title), 'Other'].map((r, k) => `<label><input type="radio" name="Role" value="${r}" ${k ? '' : 'required'}><span>${r.replace(' Intern', '')}</span></label>`).join('');
+  document.getElementById('jobs').addEventListener('click', e => { const a = e.target.closest('[data-role]'); if (!a) return; const r = roles.querySelector(`input[value="${a.dataset.role}"]`); if (r) r.checked = true; });
+
+  /* application → email via FormSubmit (same inbox as the newsletter) */
+  (() => {
+    const f = document.getElementById('applyForm'), msg = f.querySelector('.ap-msg'), btn = f.querySelector('.ap-send'), lbl = btn.querySelector('span');
+    const show = (html, ok) => { msg.className = 'ap-msg ' + (ok ? 'ok' : 'err'); msg.innerHTML = html; };
+    /* red only on fields still missing: clears as soon as that field is filled */
+    const fix = e => { const fld = e.target.closest('.ap-f'); if (fld && [...fld.querySelectorAll('[required]')].some(x => x.checkValidity()) || fld && fld.querySelector('input[type=radio]:checked')) fld.classList.remove('bad'); if (!f.querySelector('.ap-f.bad') && msg.classList.contains('err')) msg.className = 'ap-msg'; };
+    f.addEventListener('input', fix); f.addEventListener('change', fix);
+    f.addEventListener('submit', async e => {
+      e.preventDefault();
+      f.querySelectorAll('.ap-f').forEach(x => x.classList.remove('bad'));
+      const bad = [...f.querySelectorAll('[required]')].filter(x => !x.checkValidity());
+      if (bad.length) { bad.forEach(x => x.closest('.ap-f').classList.add('bad')); show('Please fill the highlighted fields.', false); bad[0].focus(); return; }
+      const fd = new FormData(f), d = Object.fromEntries(fd.entries());
+      btn.disabled = true; lbl.textContent = 'Sending…';
+      try {
+        const r = await fetch('https://formsubmit.co/ajax/' + SITE.newsletterInbox, {
+          method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({
+            _subject: `Internship application: ${d.Role} — ${d.Name}`, _template: 'table', _captcha: 'false', _replyto: d.email,
+            Name: d.Name, Email: d.email, Phone: d.Phone, Internship: d.Role, 'Currently': d.Status, 'Portfolio / resume': d.Portfolio, 'Why Avora': d.Note || '-',
+            _autoresponse: `Hi ${d.Name},\n\nThanks for applying for the ${d.Role} internship at Avora Brands. We have your application and will reply within 2 working days.\n\nTeam Avora Brands`
+          })
+        });
+        const j = await r.json().catch(() => ({}));
+        if (!r.ok || String(j.success) === 'false') throw new Error(j.message || 'failed');
+        f.reset(); lbl.textContent = 'Application sent';
+        show(`Thanks, ${d.Name.split(' ')[0]}! Your application is in our inbox. Check ${d.email.replace(/[<>&"]/g, '')} for a confirmation.`, true);
+      } catch (err) {
+        btn.disabled = false; lbl.textContent = 'Send application';
+        const body = encodeURIComponent(`Name: ${d.Name}\nPhone: ${d.Phone}\nInternship: ${d.Role}\nCurrently: ${d.Status}\nPortfolio: ${d.Portfolio}\n\n${d.Note || ''}`);
+        show(`Couldn't send right now. Please <a href="https://mail.google.com/mail/?view=cm&fs=1&to=${SITE.newsletterInbox}&su=${encodeURIComponent('Internship application: ' + d.Role)}&body=${body}" target="_blank" rel="noopener">send it by email</a> instead.`, false);
+      }
+    });
+  })();
 </script>
 <script src="assets/js/site.js"></script>
 </body>

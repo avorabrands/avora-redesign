@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Case Study — Avora Brands</title>
+<title>Project — Avora Brands</title>
 <meta name="description" content="Avora Brands case study.">
 <meta name="theme-color" content="#060A18">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪔</text></svg>">
@@ -21,9 +21,9 @@
   (() => {
     const id = new URLSearchParams(location.search).get('p');
     const i = Math.max(0, PROJECTS.findIndex(p => p.id === id)), p = PROJECTS[i], next = PROJECTS[(i + 1) % PROJECTS.length];
-    document.title = `${p.client} — ${CATS[p.cat]} Case Study | Avora Brands`;
+    document.title = `${p.client} — ${CATS[p.cat]} Project | Avora Brands`;
     document.querySelector('meta[name=description]').content = p.summary;
-    const g = p.gallery;
+    const g = /-thumb\./.test(p.cover) ? p.gallery : [p.cover, ...p.gallery];
     document.getElementById('cs').innerHTML = `
     <section class="page-hero" style="padding-bottom:130px">
       <div class="stars"></div><div class="rangoli-bg"></div>
@@ -35,20 +35,19 @@
         <p class="lead reveal" style="--d:.3s">${p.summary}</p>
       </div>
     </section>
-    <div class="container"><div class="cs-hero-img reveal-scale"><img src="${p.cover}" alt="${p.client} — ${p.title}"></div></div>
     <section class="section--tight"><div class="container">
       <div class="cs-meta reveal"><div><small>Industry</small><b>${p.industry}</b></div><div><small>Services</small><b>${p.services}</b></div><div><small>Timeline</small><b>${p.timeline}</b></div><div><small>Year</small><b>${p.year}</b></div></div>
     </div></section>
     <section class="section" style="padding-top:20px"><div class="container cs-body">
-      <nav class="cs-toc" aria-label="On this page"><a href="#overview" class="active">Overview</a><a href="#challenge">Challenge</a><a href="#solution">Solution</a><a href="#results">Highlights</a><a href="#deliverables">Deliverables</a><a href="#gallery">Gallery</a></nav>
+      <nav class="cs-toc" aria-label="On this page"><a href="#overview" class="active">Overview</a><a href="#challenge">Challenge</a><a href="#solution">Solution</a><a href="#results">Highlights</a><a href="#deliverables">Deliverables</a>${g.length ? '<a href="#gallery">Gallery</a>' : ''}</nav>
       <div>
         <div class="cs-sec reveal" id="overview"><span class="eyebrow">Overview</span><h2 class="mt-8">The brief</h2><p>${p.overview}</p></div>
         <div class="cs-sec reveal" id="challenge"><span class="eyebrow">Challenge</span><h2 class="mt-8">What made it hard</h2><p>${p.challenge}</p></div>
         <div class="cs-sec reveal" id="solution"><span class="eyebrow">Solution</span><h2 class="mt-8">What we did</h2><p>${p.solution}</p></div>
         <div class="cs-sec reveal" id="results"><span class="eyebrow">Highlights</span><h2 class="mt-8">The outcome</h2><div class="result-list">${p.results.map(([k, v]) => `<div><small>${k}</small>${v}</div>`).join('')}</div></div>
         <div class="cs-sec reveal" id="deliverables"><span class="eyebrow">Deliverables</span><h2 class="mt-8">What we handed over</h2><div class="deliv">${p.deliverables.map(d => `<div>${d}</div>`).join('')}</div></div>
-        <div class="cs-sec" id="gallery"><span class="eyebrow">Gallery</span><h2 class="mt-8">A closer look</h2>
-          <div class="gallery">${g.map((s, k) => `<img class="reveal ${g.length % 2 && k === 0 ? 'wide' : ''}" src="${s}" alt="${p.client} design detail ${k + 1}" loading="lazy">`).join('')}</div></div>
+        ${g.length ? `<div class="cs-sec" id="gallery"><span class="eyebrow">Gallery</span><h2 class="mt-8">A closer look</h2>
+          <div class="gallery">${g.map((s, k) => `<img class="reveal ${g.length % 2 && k === 0 ? 'wide' : ''}" src="${s}" alt="${p.client} design detail ${k + 1}" loading="lazy">`).join('')}</div></div>` : ''}
       </div>
     </div></section>
     <section class="section" style="padding-top:0"><div class="container">
@@ -64,6 +63,9 @@
   const toc = [...document.querySelectorAll('.cs-toc a')];
   const o = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) toc.forEach(a => a.classList.toggle('active', a.hash === '#' + e.target.id)); }), { rootMargin: '-40% 0px -55% 0px' });
   document.querySelectorAll('.cs-sec').forEach(s => o.observe(s));
+  /* hero stage: tilted on load, lies flat as you scroll into it */
+  const st = document.querySelector('.cs-stage');
+  if (st) { const f = () => st.classList.toggle('flat', scrollY > 40 || st.getBoundingClientRect().top < innerHeight * .55); f(); addEventListener('scroll', f, { passive: true }); setTimeout(() => st.classList.add('flat'), 1400); }
 </script>
 </body>
 </html>

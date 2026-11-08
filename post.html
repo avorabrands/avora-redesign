@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Journal — Avora Brands</title>
+<title>Insights — Avora Brands</title>
 <meta name="description" content="A guide from the Avora Brands studio.">
 <meta name="theme-color" content="#060A18">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪔</text></svg>">
@@ -32,14 +32,14 @@
     const i = Math.max(0, POSTS.findIndex(p => p.id === id)), p = POSTS[i], body = POST_BODIES[p.id];
     const more = POSTS.filter(x => x.id !== p.id).slice(0, 3);
     const fmt = d => new Date(d).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
-    document.title = `${p.title} — Avora Brands Journal`;
+    document.title = `${p.title} — Avora Brands Insights`;
     document.querySelector('meta[name=description]').content = p.excerpt;
     const url = location.href;
     document.getElementById('post').innerHTML = `
     <section class="page-hero" style="padding-bottom:130px">
       <div class="stars"></div><div class="rangoli-bg"></div>
       <div class="container on-dark" style="max-width:900px">
-        <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><a href="blog.html">Journal</a><span>/</span><span>${p.cat}</span></nav>
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><a href="blog.html">Insights</a><span>/</span><span>${p.cat}</span></nav>
         <span class="chip chip--gold reveal">${p.cat}</span>
         <h1 class="h1 mt-24" data-split>${p.title}</h1>
         <p class="mt-24 reveal" style="color:#A9B1C7;font-weight:600">${p.author} · ${fmt(p.date)} · ${body.read}</p>
@@ -55,8 +55,8 @@
       <div class="post-cta"><div><b style="font-size:20px">Need this done for your business?</b><p>Our studio handles it end-to-end — free 15-minute call.</p></div><a class="btn btn--gold" href="contact.html">Get a quote <i data-i="arrow"></i></a></div>
     </div></article>
     <section class="section section--white"><div class="container">
-      <div class="sec-head"><div><span class="eyebrow">Keep reading</span><h2 class="h2 mt-8">More from the journal</h2></div><a class="btn btn--ghost" href="blog.html">All articles</a></div>
-      <div class="grid g-3">${more.map(m => `<a class="post-card reveal" href="post.html?p=${m.id}"><div class="cover" style="background:${m.bg}"><span class="big">${m.mark}</span></div><div class="body"><span class="chip" style="align-self:flex-start">${m.cat}</span><h3 class="h4">${m.title}</h3><div class="meta"><span>${m.author}</span></div></div></a>`).join('')}</div>
+      <div class="sec-head"><div><span class="eyebrow">Keep reading</span><h2 class="h2 mt-8">More insights</h2></div><a class="btn btn--ghost" href="blog.html">All articles</a></div>
+      <div class="grid g-3">${more.map(m => `<a class="post-card reveal" href="post.html?p=${m.id}"><div class="cover" style="padding:0"><img src="${m.img}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div><div class="body"><span class="chip" style="align-self:flex-start">${m.cat}</span><h3 class="h4">${m.title}</h3><div class="meta"><span>${m.author}</span></div></div></a>`).join('')}</div>
     </div></section>`;
   })();
 </script>

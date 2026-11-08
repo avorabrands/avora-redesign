@@ -5,19 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>About Avora Brands — The Team Behind the Brands</title>
 <meta name="description" content="Avora Brands is a design, print and branding studio in HSR Layout, Bengaluru with roots in Madanapalle. Meet the founders and team.">
-<meta property="og:image" content="https://www.avorabrands.in/images/founder.jpg">
+<meta property="og:image" content="images/founder.jpg">
 <meta name="theme-color" content="#060A18">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪔</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/site.css">
 <style>
-  .story{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
-  .story .prose{margin:0;max-width:none;font-size:18px}
-  .story-img{position:sticky;top:110px;border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/5}
+  .story{display:grid;grid-template-columns:.8fr 1fr;gap:56px;align-items:start}
+  .story .prose{margin:0;max-width:none;font-size:16px}.story .prose p{margin-bottom:12px}.story .h2{font-size:clamp(28px,3vw,40px)}.story .prose.mt-32{margin-top:20px}
+  .story{align-items:stretch}.story-img{position:relative;border-radius:var(--radius-lg);overflow:hidden;min-height:420px}.story-img img{position:absolute;inset:0}
   .story-img img{width:100%;height:100%;object-fit:cover;object-position:top}
-  .story-img .chip{position:absolute;left:18px;bottom:18px}
-  @media (max-width:900px){.story{grid-template-columns:1fr;gap:32px}.story-img{position:relative;top:0;max-width:440px}}
+  .story-img .chip{position:absolute;left:18px;bottom:18px;background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(14px) saturate(1.4);-webkit-backdrop-filter:blur(14px) saturate(1.4);font-weight:700;box-shadow:0 10px 30px -10px rgba(0,0,0,.5)}
+  @media (max-width:900px){.story{grid-template-columns:1fr;gap:32px}.story-img{position:relative;top:0;max-width:none;min-height:0;aspect-ratio:4/3;max-height:340px}.story-img img{object-position:center 18%}.story-img .np{left:12px;right:auto;bottom:12px;padding:9px 14px;border-radius:14px}.story-img .np b{font-size:14px}.story-img .np span{font-size:11.5px}}
   .team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
   .team-grid.two{grid-template-columns:repeat(2,minmax(0,340px));justify-content:start}
   @media (max-width:900px){.team-grid{grid-template-columns:repeat(2,1fr)}}
@@ -29,19 +29,31 @@
 <body data-page="about" class="dark-top">
 <div data-header></div>
 <main>
-  <section class="page-hero">
-    <div class="stars"></div><div class="rangoli-bg"></div>
+  <section class="page-hero about-hero2">
+    <div class="stars"></div>
     <div class="container on-dark">
       <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><span>About</span></nav>
       <span class="eyebrow reveal">About Avora</span>
-      <h1 class="h-display mt-24" data-split>We build brands<br>that <span class="serif gold-text">last.</span></h1>
-      <p class="lead reveal" style="--d:.35s">A design, print and branding studio in HSR Layout, Bengaluru — with roots in Madanapalle — helping startups and growing businesses look as good as they really are.</p>
+      <h1 class="ax-title reveal">
+        A small team
+        <span class="ax-faces"><img src="images/founder.jpg" alt="Reddy Pavan M"><img src="images/about-namratha.jpg" alt="Namratha E"><img src="images/about-vignesh.jpg" alt="Vignesh"></span>
+        in Bengaluru, building <span class="serif gold-text">brands</span>
+        <span class="ax-pill w"><img src="images/cashalert-app-thumb.jpg" alt="CashAlert app design"></span>
+        and <span class="serif gold-text">gifts</span>
+        <span class="ax-pill"><img src="images/hamper-clients.jpg" alt="Diwali gift hamper"></span>
+        people remember.
+      </h1>
+      <div class="ax5-foot reveal" style="--d:.2s">
+        <p>Design, print and delivery under one roof. We started in Madanapalle and now work from HSR Layout, helping startups and growing businesses look as good as they really are.</p>
+        <div class="btn-row"><a class="btn btn--gold" href="contact.html" data-magnetic>Work with us <i data-i="arrow"></i></a><a class="btn btn--ghost" href="work.html">See our work</a></div>
+      </div>
     </div>
   </section>
 
+
   <section class="section">
     <div class="container story">
-      <div class="story-img reveal-scale"><img src="https://www.avorabrands.in/images/founder.jpg" alt="Reddy Pavan M, Founder & CEO"><span class="chip">Reddy Pavan M · Founder & CEO</span></div>
+      <div class="story-img reveal-scale"><img src="images/founder.jpg" alt="Reddy Pavan M, Founder & CEO"><div class="np"><div><b>Reddy Pavan M</b><span>Founder &amp; CEO · UI/UX designer</span></div></div></div>
       <div>
         <span class="eyebrow reveal">Our story</span>
         <h2 class="h2 mt-16 reveal">Great businesses deserve <span class="serif blue-text">great branding.</span></h2>
@@ -56,53 +68,51 @@
     </div>
   </section>
 
-  <section class="section section--dark">
+
+  <section class="section section--dark believe">
     <div class="container">
-      <div class="sec-head"><div><span class="eyebrow reveal">What we believe</span><h2 class="h2 reveal">Four promises <span class="serif gold-text">we keep.</span></h2></div></div>
-      <div class="grid g-4">
-        <div class="card spotlight reveal"><div class="ic gold">◎</div><h3 class="h4">Strategy before style</h3><p>Every design decision ties back to who you're selling to.</p></div>
-        <div class="card spotlight reveal" style="--d:.06s"><div class="ic gold">✦</div><h3 class="h4">One team, end to end</h3><p>The designer who makes it checks the print proof.</p></div>
-        <div class="card spotlight reveal" style="--d:.12s"><div class="ic gold">⌚</div><h3 class="h4">Dates in writing</h3><p>Timelines are agreed upfront — no vague "soon".</p></div>
-        <div class="card spotlight reveal" style="--d:.18s"><div class="ic gold">♥</div><h3 class="h4">Rooted, not generic</h3><p>We design in Telugu, Hindi and English for real Indian audiences.</p></div>
+      <div class="sec-head"><div><span class="eyebrow reveal">What we believe</span><h2 class="h2 reveal">Four promises <span class="serif gold-text">we keep.</span></h2></div>
+        <p class="lead reveal" style="max-width:420px">Not values on a wall. These are the rules we work by on every project, big or small.</p></div>
+      <div class="pillars"><article class="pl reveal" style="--d:0.00s"><span class="pl-n">01</span><div class="pl-vis"><svg viewBox="0 0 120 90" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle class="dr" cx="52" cy="48" r="32"/><circle class="dr" cx="52" cy="48" r="20"/><circle class="dr gd" cx="52" cy="48" r="7"/><path class="dr gd" d="M104 10 L58 44"/><path class="dr gd" d="M104 10 l-12 2 m12 -2 l-2 12"/></svg></div><h3>Strategy before style</h3><p>Every colour, font and layout ties back to who you are selling to.</p></article><article class="pl reveal" style="--d:0.08s"><span class="pl-n">02</span><div class="pl-vis"><svg viewBox="0 0 120 90" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="dr" x="6" y="30" width="26" height="26" rx="7"/><rect class="dr" x="47" y="30" width="26" height="26" rx="7"/><rect class="dr gd" x="88" y="30" width="26" height="26" rx="7"/><path class="dr" d="M32 43 h15 M73 43 h15"/><path class="dr" d="M12 43 l4 4 l8 -8"/><path class="dr" d="M53 43 h14 M60 36 v14"/><path class="dr gd" d="M94 43 l5 5 l10 -10"/></svg></div><h3>One team, end to end</h3><p>The person who designs your card is the one who checks the print proof.</p></article><article class="pl reveal" style="--d:0.16s"><span class="pl-n">03</span><div class="pl-vis"><svg viewBox="0 0 120 90" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="dr" x="14" y="16" width="92" height="64" rx="10"/><path class="dr" d="M14 34 h92 M36 8 v16 M84 8 v16"/><circle class="dr gd" cx="76" cy="56" r="13"/><path class="dr" d="M32 50 h12 M32 62 h12 M52 50 h8"/></svg></div><h3>Dates in writing</h3><p>Timelines are agreed before we start. No vague "soon", ever.</p></article><article class="pl reveal" style="--d:0.24s"><span class="pl-n">04</span><div class="pl-vis"><div class="pl-langs" aria-hidden="true"><span>అ</span><span>अ</span><span>த</span><span>A</span></div></div><h3>Rooted, not generic</h3><p>Telugu, Hindi, Tamil, English and more, written for Indian audiences.</p></article></div>
+    </div>
+  </section>
+
+  <section class="section team2">
+    <div class="container">
+      <div class="sec-head"><div><span class="eyebrow reveal">Our team</span><h2 class="h2 reveal">The people <span class="serif blue-text">you'll work with.</span></h2></div>
+        <p class="lead reveal" style="max-width:420px">No call centres, no account managers. Call us and our founder answers, and the people on this page do the work.</p></div>
+      <div class="tm-grid">
+        <article class="tm reveal">
+          <div class="tm-img"><img src="images/about-namratha.jpg" alt="Namratha E, Co-Founder &amp; Creative Director" loading="lazy"><span class="tm-tag">Design</span></div>
+          <div class="tm-body"><h3>Namratha E</h3><p class="tm-role">Co-Founder &amp; Creative Director</p>
+            <p>Leads the design studio: brand identities, app screens and print, from the first sketch to the final proof.</p>
+            <ul class="tm-skills"><li>Brand identity</li><li>UI/UX</li><li>Print &amp; packaging</li></ul></div>
+        </article>
+        <article class="tm reveal" style="--d:.1s">
+          <div class="tm-img"><img src="images/about-vignesh.jpg" alt="Vignesh, Business Manager" loading="lazy"><span class="tm-tag">Business</span></div>
+          <div class="tm-body"><h3>Vignesh</h3><p class="tm-role">Business Manager</p>
+            <p>Your first point of contact: quotes, timelines and making sure every order reaches you on the agreed date.</p>
+            <ul class="tm-skills"><li>Quotes &amp; planning</li><li>Client care</li><li>Delivery</li></ul></div>
+        </article>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="sec-head"><div><span class="eyebrow reveal">Leadership</span><h2 class="h2 reveal">The people <span class="serif blue-text">behind Avora.</span></h2></div></div>
-      <div class="team-grid" id="leaders"></div>
-      <div class="sec-head mt-64"><div><span class="eyebrow reveal">The team</span><h2 class="h2 reveal">The people <span class="serif blue-text">making it happen.</span></h2></div></div>
-      <div class="team-grid" id="team"></div>
-    </div>
-  </section>
 
-  <section class="section section--white">
-    <div class="container">
-      <div class="sec-head"><div><span class="eyebrow reveal">Milestones</span><h2 class="h2 reveal">Our journey <span class="serif blue-text">so far.</span></h2></div></div>
-      <div class="timeline reveal" style="max-width:720px">
-        <div class="ti"><small>AUG 2025</small><h3 class="h4">First full brand system</h3><p>Local Service Finder — identity, stationery, uniforms and toolboxes.</p></div>
-        <div class="ti"><small>NOV 2025</small><h3 class="h4">Into FinTech</h3><p>CashAlert's brand and app UI for merchants across India.</p></div>
-        <div class="ti"><small>2026</small><h3 class="h4">A monthly magazine, every month</h3><p>64 pages of Sri Veluguvani, designed in Telugu, issue after issue.</p></div>
-        <div class="ti"><small>JUN 2026</small><h3 class="h4">Devotional apps</h3><p>Bhakti TV and Bhaktilok — calm, sacred UI for every age group.</p></div>
-        <div class="ti"><small>NOV 2026</small><h3 class="h4">Diwali gifting launches 🪔</h3><p>Custom hampers and personalised gifts, designed and delivered by one team.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
+  <section class="section" style="padding-top:24px">
     <div class="container">
       <div class="sec-head"><div><span class="eyebrow reveal">Where we are</span><h2 class="h2 reveal">Two cities. <span class="serif blue-text">One studio.</span></h2></div></div>
       <div class="places">
-        <div class="tile tile--navy reveal" style="min-height:260px"><span class="chip chip--gold" style="align-self:flex-start">Studio</span><h3 class="h3 mt-24">Bengaluru</h3><p>HSR Layout, Bengaluru, Karnataka 560102<br>Mon – Sat · 9:30 AM – 7:00 PM</p><a class="tile-cta" style="color:var(--gold)" href="contact.html">Visit or call <i data-i="arrow"></i></a></div>
+        <div class="tile tile--navy reveal" style="min-height:260px"><span class="chip chip--gold" style="align-self:flex-start">Studio</span><h3 class="h3 mt-24">Bengaluru</h3><p>HSR Layout, Bengaluru, Karnataka 560102<br>Mon – Sat · 9:00 AM – 6:00 PM</p><a class="tile-cta" style="color:var(--gold)" href="contact.html">Visit or call <i data-i="arrow"></i></a></div>
         <div class="tile tile--gold reveal" style="min-height:260px;--d:.08s"><span class="chip" style="align-self:flex-start">Roots</span><h3 class="h3 mt-24">Madanapalle</h3><p>Where it started — serving local businesses across Annamayya district and Andhra Pradesh.</p><a class="tile-cta" style="color:#8A5300" href="post.html?p=madanapalle-branding">Why local brands matter <i data-i="arrow"></i></a></div>
       </div>
     </div>
   </section>
 
   <section class="section" style="padding-top:0">
-    <div class="container"><div class="cta-band on-dark" style="grid-template-columns:1fr auto">
-      <div><span class="eyebrow">Your brand deserves more</span><h2 class="h2 mt-16">Let's build something <span class="serif gold-text">extraordinary.</span></h2></div>
+    <div class="container"><div class="cta-band cta-band--photo on-dark" style="grid-template-columns:1fr auto">
+      <img class="cta-bg" src="images/about-cta.jpg" alt="" aria-hidden="true" loading="lazy">
+      <div style="position:relative;z-index:2"><span class="eyebrow">Your brand deserves more</span><h2 class="h2 mt-16">Let's build something <span class="serif gold-text">extraordinary.</span></h2></div>
       <div class="btn-row"><a class="btn btn--gold" href="contact.html" data-magnetic>Work with us <i data-i="arrow"></i></a><a class="btn btn--ghost" href="careers.html">Join the team</a></div>
     </div></div>
   </section>
@@ -110,10 +120,6 @@
 <div data-footer></div>
 <script src="assets/js/data.js"></script>
 <script>
-  const m = p => `<div class="member reveal"><img src="${p.img}" alt="${p.name}, ${p.role}" loading="lazy"><div class="cap"><b>${p.name}</b><small>${p.role}</small></div></div>`;
-  document.getElementById('leaders').innerHTML = [TEAM.founder, ...TEAM.cofounders].map(m).join('');
-  document.getElementById('team').innerHTML = TEAM.team.map(m).join('');
-  document.getElementById('leaders').style.gridTemplateColumns = 'repeat(auto-fit,minmax(220px,300px))';
 </script>
 <script src="assets/js/site.js"></script>
 </body>
