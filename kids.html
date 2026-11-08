@@ -206,7 +206,7 @@
   .pol .pz{position:absolute;right:10px;top:10px;padding:5px 11px;border-radius:999px;background:var(--pink);color:#fff;border:2px solid var(--ink);font-family:'Fredoka';font-weight:600;font-size:12px}
   .pol h3{font-family:'Gochi Hand';font-weight:400;font-size:27px;margin:12px 4px 2px;line-height:1.1}
   .pol .row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:10px 4px 0}
-  .pol .peek{background:none;border:0;font-family:'Fredoka';font-weight:600;color:var(--grape);cursor:pointer;padding:6px 0;font-size:15px}
+  .pol .peek{white-space:nowrap;background:none;border:0;font-family:'Fredoka';font-weight:600;color:var(--grape);cursor:pointer;padding:6px 0;font-size:15px}
   .add{display:inline-flex;align-items:center;gap:7px;padding:10px 16px;border-radius:999px;border:2.5px solid var(--ink);background:var(--sun);font-family:'Fredoka';font-weight:600;font-size:15px;color:var(--ink);box-shadow:0 4px 0 var(--ink);cursor:pointer;transition:transform .15s,box-shadow .15s,background .2s}
   .add:active{transform:translateY(3px);box-shadow:0 1px 0 var(--ink)}
   .add.on{background:var(--grass);color:#fff}
@@ -342,6 +342,28 @@
     .final{padding-top:170px}.final .rainbow{width:270px}
     .w-cta .kbtn{flex:1;justify-content:center}
   }
+  /* mobile hero: tidy balloons row, sun tucked top-right */
+  @media (max-width:600px){
+    .world{padding-top:112px;min-height:auto}
+    .world .container{gap:0}
+    .h-world{font-size:clamp(34px,10vw,44px);margin-top:18px}
+    .w-lead{font-size:16.5px;margin-top:16px}
+    .w-cta{margin-top:22px;gap:10px}
+    .w-cta .kbtn{padding:13px 14px;font-size:15.5px}
+    .balloons{height:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:34px 0 0;max-width:none;position:static}
+    .bal,.bal.b1,.bal.b2,.bal.b3,.bal.b4{position:relative;left:auto;right:auto;top:auto;--s:72px;margin:0 auto}
+    .bal:nth-child(odd){margin-top:18px}
+    .bal .ball{border-width:3px;box-shadow:0 6px 0 var(--ink)}
+    .bal svg.str{height:30px;width:20px}
+    .bal .lbl{position:static;margin-top:4px;transform:none;font-size:11px;padding:4px 7px;border-radius:9px;white-space:normal;text-align:center;line-height:1.15;max-width:86px}
+    .bal .knot{margin-top:4px}
+    .sun{width:58px;height:58px;right:22px;top:4px;position:absolute;z-index:1}
+    .sun .rays{inset:-18px}
+    .sun .face i{width:7px;height:9px}.sun .face b{width:22px;height:11px;margin-left:-11px;border-width:3px}.sun .face s{width:11px;height:6px}
+    .hills{height:90px;margin-top:-10px}
+    .hills .flower{width:24px;height:42px;bottom:22px}
+    .cloud.c1{top:120px;--w:120px}.cloud.c2{top:420px;--w:90px}.cloud.c3{top:250px;--w:80px}
+  }
   @media (prefers-reduced-motion:reduce){
     .cloud,.plane,.sun .rays,.bal,.crayon-band .tr,.trail>svg.path path,.party .cf,.hills .flower,.scroll-cue{animation:none}
     .h-world .ch{animation:none;opacity:1;transform:none}
@@ -383,7 +405,6 @@
       <svg class="flower" style="left:58%;animation-delay:-1s" viewBox="0 0 34 60"><path d="M17 60V26" stroke="#1E1B3A" stroke-width="3"/><circle cx="17" cy="18" r="10" fill="#FFC83D" stroke="#1E1B3A" stroke-width="3"/><circle cx="17" cy="18" r="4" fill="#FF8A3D"/></svg>
       <svg class="flower" style="left:84%;animation-delay:-2s" viewBox="0 0 34 60"><path d="M17 60V26" stroke="#1E1B3A" stroke-width="3"/><circle cx="17" cy="18" r="10" fill="#8B6CEF" stroke="#1E1B3A" stroke-width="3"/><circle cx="17" cy="18" r="4" fill="#fff"/></svg>
     </div>
-    <span class="scroll-cue" aria-hidden="true">scroll &amp; explore<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span>
   </section>
 
   <div class="crayon-band" aria-hidden="true"><div class="tr" id="band"></div></div>
@@ -466,7 +487,7 @@
   <section class="sec" id="shelf">
     <div class="container">
       <div class="head c"><span class="eyebrow reveal">The toy shelf</span><h2 class="reveal">Nothing routine. Everything makes <span class="scrib">something.<svg viewBox="0 0 200 20" preserveAspectRatio="none"><path d="M2 12 Q 60 2 110 12 T 198 8" stroke="#3FB8F0" stroke-width="6" fill="none" stroke-linecap="round"/></svg></span></h2>
-        <p class="reveal">Pick a crayon to filter. Tap “peek” to flip a card and see what your child learns.</p></div>
+        <p class="reveal">Pick a crayon to filter. Tap “What they learn” on any card to flip it.</p></div>
       <div class="crayons" id="crayons" role="tablist"></div>
       <p class="shelf-count hand" id="shelfCount" aria-live="polite"></p>
       <div class="shelf" id="shelfGrid"></div>
@@ -710,8 +731,8 @@
     const c = COLS[i % 6], r = [-2.5, 1.8, -1.2, 2.4, -1.8, 1.2][i % 6];
     return `<article class="pol reveal" style="--c:${c};--r:${r}deg;--d:${(i % 3) * .07}s"><div class="in3d">
       <div class="face"><div class="ph"><img src="images/${p.img}" alt="${p.name}" loading="lazy"><span class="ag">${ageLabel(p.ages)}</span>${p.pers ? '<span class="pz">Personalised</span>' : ''}</div>
-        <h3>${p.name}</h3><div class="row"><button class="peek" type="button">peek ↻</button><button class="add${list.has(p.id) ? ' on' : ''}" type="button" data-id="${p.id}">${addBtn(p.id)}</button></div></div>
-      <div class="back"><h4>${p.name}</h4><p>${p.desc}</p><div class="sk">${p.skills.map(s => `<span>${s}</span>`).join('')}</div><div class="row"><button class="peek" type="button">↺ back</button><button class="add${list.has(p.id) ? ' on' : ''}" type="button" data-id="${p.id}">${addBtn(p.id)}</button></div></div>
+        <h3>${p.name}</h3><div class="row"><button class="peek" type="button">What they learn ↻</button><button class="add${list.has(p.id) ? ' on' : ''}" type="button" data-id="${p.id}">${addBtn(p.id)}</button></div></div>
+      <div class="back"><h4>${p.name}</h4><p>${p.desc}</p><div class="sk">${p.skills.map(s => `<span>${s}</span>`).join('')}</div><div class="row"><button class="peek" type="button">← Back</button><button class="add${list.has(p.id) ? ' on' : ''}" type="button" data-id="${p.id}">${addBtn(p.id)}</button></div></div>
     </div></article>`;
   };
   const grid = $('#shelfGrid');
