@@ -13,7 +13,7 @@ Static site: plain HTML + one CSS file + two JS files. No build step.
 | `about.html` | Story, values, founders, team, milestones, locations |
 | `blog.html` / `post.html?p=<id>` | Insights page + 5 articles (Praveen's 2 removed, Vignesh's Diwali checklist added) (bodies in `assets/js/posts-content.js`) |
 | `careers.html` | Culture, open roles, internship, application form |
-| `kids.html` | Little Makers by Avora (kids store): playground (doodle → T-shirt/mug/frame/tote, name puzzle, storybook cover), age filters, 11 creative kits/personalised gifts (list in the page script), drawing-to-toy, folk art kits, parents section. Orders go as a WhatsApp list. |
+| `kids.html` | Avora Kids (kids store): playground (doodle → T-shirt/mug/frame/tote, name puzzle, storybook cover), age filters, 11 creative kits/personalised gifts (list in the page script), drawing-to-toy, folk art kits, parents section. Orders go as a WhatsApp list. |
 | `contact.html` | Quote form, contact cards, map, FAQ |
 
 All forms open WhatsApp (+91 90194 40645) with the details pre-filled, so there's no backend to run.

@@ -64,7 +64,7 @@ function header() {
           <a href="design.html"><span class="ic">${I.pen}</span><span><strong>Design Studio</strong><small>Branding, websites, apps, social & packaging design</small></span></a>
           <a href="print.html"><span class="ic gold">${I.printer}</span><span><strong>Print & Merch</strong><small>Visiting cards, apparel, packaging, signage — delivered</small></span></a>
           <a href="diwali.html"><span class="ic rose">${I.gift}</span><span><strong>Diwali Gifting</strong><small>Custom hampers & personalised gifts for teams and clients</small></span></a>
-          <a href="kids.html"><span class="ic kids">${I.palette}</span><span><strong>Little Makers <em class="new-tag">Kids</em></strong><small>Creative kits, folk art & gifts made from kids' imagination</small></span></a>
+          <a href="kids.html"><span class="ic kids">${I.palette}</span><span><strong>Avora Kids <em class="new-tag">New</em></strong><small>Creative kits, folk art & gifts made from kids' imagination</small></span></a>
         </div></li>`
     : `<li><a href="${n.href}" class="${n.cls || ''}" ${page === n.key ? 'aria-current="page"' : ''}>${n.label}</a></li>`).join('');
   return `
@@ -87,7 +87,7 @@ function header() {
       <a href="diwali.html">Diwali Gifts <small>NEW</small></a>
       <a href="design.html">Design Studio</a>
       <a href="print.html">Print & Merch</a>
-      <a href="kids.html">Little Makers <small>KIDS</small></a>
+      <a href="kids.html">Avora Kids <small>NEW</small></a>
       <a href="work.html">Work</a>
       <a href="about.html">About</a>
       <a href="blog.html">Insights</a>
@@ -116,7 +116,7 @@ function footer() {
         <div><h5>Services</h5><ul>
           <li><a href="design.html#branding">Branding & Identity</a></li><li><a href="design.html#website">Website Design</a></li>
           <li><a href="design.html#app">Mobile App Design</a></li><li><a href="design.html#social">Social Media Design</a></li>
-          <li><a href="print.html">Print & Merch</a></li><li><a href="diwali.html">Diwali Gifting</a></li><li><a href="kids.html">Little Makers (Kids)</a></li></ul></div>
+          <li><a href="print.html">Print & Merch</a></li><li><a href="diwali.html">Diwali Gifting</a></li><li><a href="kids.html">Avora Kids</a></li></ul></div>
         <div><h5>Company</h5><ul>
           <li><a href="work.html">Our Work</a></li><li><a href="about.html">About Us</a></li><li><a href="blog.html">Insights</a></li>
           <li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></div>
